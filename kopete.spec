@@ -3,11 +3,12 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.5
-Release:	%{_snapshot}.1
+Release:	%{_snapshot}.2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	%{name}-%{_snapshot}.tar.bz2
+Patch0		%{name}-qssl.patch
 URL:		http://kopete.kde.org
 Buildrequires:	libpsi-devel >= 20021108
 BuildRequires:	qt-devel >= 3.1
@@ -254,7 +255,7 @@ Dodaje obs³ugê protoko³u yahoo.
 
 %prep
 %setup -q -n %{name}-%{_snapshot}
-
+%patch0 -p1
 
 
 %build
