@@ -8,7 +8,7 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://ep09.kernel.pl/~djurban/snap/%{name}-%{_snapshot}.tar.bz2
-# Source0-md5:	19ead6f55cfe1df4a3386fbcb3a7378b
+# Source0-md5:	18cf641b4c76ca0ff58dcd7066147dd9
 URL:		http://kopete.kde.org
 BuildRequires:	autoconf
 BuildRequires:	automake
