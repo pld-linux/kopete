@@ -1,4 +1,4 @@
-%define		_snapshot	20021118
+%define		_snapshot	20021129
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
@@ -8,8 +8,6 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	%{name}-%{_snapshot}.tar.bz2
-Patch0:		%{name}-am.patch
-Patch1:		%{name}-errno.patch
 URL:		http://kopete.kde.org
 Buildrequires:	libpsi-devel >= 20021108
 BuildRequires:	qt-devel >= 3.1
@@ -256,23 +254,19 @@ Dodaje obs³ugê protoko³u yahoo.
 
 %prep
 %setup -q -n %{name}-%{_snapshot}
-%patch0 -p1
-%patch1 -p1
+
+
 
 %build
-
 %{__make} -f Makefile.cvs
 %configure
 
-%{__make}
-cd kopete/protocols/sms
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-cd kopete/protocols/sms
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
 
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -405,3 +399,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete*yahoo*.*
 %{_datadir}/apps/kopete/yahoo.plugin
 %{_datadir}/apps/kopete/pics/yahoo*
+
+%files plugin-protocols-winpopup
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/winpopup*.sh
+%attr(755,root,root) %{_libdir}/kde3/kopete*wp*.*
+%{_datadir}/apps/kopete/wp.plugin
+%{_datadir}/apps/kopete/pics/wp*
