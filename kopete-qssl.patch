@@ -1,16 +1,27 @@
---- kopete-20030217/kopete/protocols/jabber/Makefile.am.orig	Mon Feb 17 13:32:09 2003
-+++ kopete-20030217/kopete/protocols/jabber/Makefile.am	Mon Feb 17 13:33:55 2003
+--- kopete-20030217/kopete/protocols/jabber/Makefile.am~	Sun Feb 16 20:41:37 2003
++++ kopete-20030217/kopete/protocols/jabber/Makefile.am	Thu Feb 20 18:22:23 2003
 @@ -12,10 +12,11 @@
  kopete_jabber_la_SOURCES = jabberprotocol.cpp jabberresource.cpp jabbercontact.cpp \
                             jabberprefs.cpp jabbermessagemanager.cpp jabberformtranslator.cpp \
                             jabberformlineedit.cpp
 -kopete_jabber_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN)
-+kopete_jabber_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) 	-R/usr/X11R6/lib/qt/plugins-mt/network/
++kopete_jabber_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) -R /usr/lib/qt/plugins-mt/network/ -rpath /usr/lib/qt/plugins-mt/network/
  kopete_jabber_la_LIBADD  = ../../libkopete/libkopete.la \
  	ui/libkopetejabberui.la \
 -	-lpsi
 +	-lpsi \
-+	-L/usr/X11R6/lib/qt/plugins-mt/network/ 
++	-L/usr/lib/qt/plugins-mt/network/
  
  data_DATA = jabber.desktop
  datadir = $(kde_datadir)/kopete
+--- kopete-20030217/kopete/protocols/jabber/jabberprotocol.cpp~	Sun Feb 16 20:07:35 2003
++++ kopete-20030217/kopete/protocols/jabber/jabberprotocol.cpp	Fri Feb 21 22:59:22 2003
+@@ -200,7 +200,7 @@
+ 		QStringList dirs;
+ 
+ 		dirs += "/usr/lib";
+-		dirs += "/usr/local/lib";
++		dirs += "/usr/lib/qt/plugins-mt/network";
+ 		dirs += QStringList::split(":", QString(getenv("LD_LIBRARY_PATH")));
+ 
+ 		Jabber::Stream::loadSSL(dirs);
