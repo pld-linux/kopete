@@ -1,19 +1,19 @@
 %define		_snapshot	20021118
-Name:		kopete
-License:	GPL
-Group:		X11/Applications/Networking
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
+Name:		kopete
 Version:	0.5
 Release:	%{_snapshot}.1
 Epoch:		1
+License:	GPL
+Group:		X11/Applications/Networking
 Source0:	%{name}-%{_snapshot}.tar.bz2
 Patch0:		%{name}-am.patch
 URL:		http://kopete.kde.org
-Requires:	kdelibs >= 3.0.9
 Buildrequires:	libpsi >= 20021108
-Requires:	qt >= 3.1
 BuildRequires:	qt-devel >= 3.1
+Requires:	kdelibs >= 3.0.9
+Requires:	qt >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -33,213 +33,222 @@ addition to templates for new developers to base a plugin off of.
 
 %description -l pl
 Kopete to rozszerzalny i rozbudowywalny komunikator obs³uguj±cy wiele
-protoko³ów pouk³adanych w pluginy. Oprócz tego aplikacja oferuje wiele
-ciekawych u¿yteczno¶ci jak np. t³umacz (kozysta z babelfish).
+protoko³ów, zaprojektowany w oparciu o wtyczki. Wszystkie protoko³y s±
+wtyczkami, co pozwala na modularn± instalacjê, konfiguracjê i u¿ywanie
+bez potrzeby obs³ugi ³adowanych wtyczek w g³ównej aplikacji. Celem
+Kopete jest wyposa¿enie u¿ytkowników w standardowy i ³atwy w u¿yciu
+interfejs pomiêdzy wszystkimi systemami komunikatorów, a jednocze¶nie
+zapewenienie programistom ³atwo¶ci pisania wtyczek obs³uguj±cych nowe
+protoko³y. Za³oga programistów Kopete udostêpnia podrêczny zestaw
+wtyczek u¿ywanych przez wiêkszo¶æ u¿ytkowników oraz szablony dla
+nowych programistów, na których mo¿na opieraæ nowe wtyczki.
 
 %package plugin-tools-autoaway
 Summary:	An autoaway plugin
-Summary(pl):	Plugin automatycznego przejscia w stan zajety.
+Summary(pl):	Plugin automatycznego przej¶cia w stan zajêty
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-autoaway
 Automatically changes status to away. Conditions are configurable.
 
 %description plugin-tools-autoaway -l pl
-Automatycznie zmienia status na zajety. Warunki w ktorych po
-zaistnieniu ktorych ma nastapic sa konfigurowalne.
+Automatycznie zmienia status na zajêty. Warunki, po zaistnieniu
+których ma nastapiæ, s± konfigurowalne.
 
 %package plugin-tools-conectionstatus
 Summary:	Internet connection detector
-Summary(pl):	Wykrywaz polazen internetowych
+Summary(pl):	Wykrywacz po³±czeñ internetowych
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-conectionstatus
 Automatically detects whether the internet connection is available or
-not
+not.
 
 %description plugin-tools-conectionstatus -l pl
 Automatycznie sprawdza czy dostêpne jest po³±czenie do internetu czy
-nie
+nie.
 
 %package plugin-tools-contactnotes
 Summary:	Add personal notes to your contacts
-Summary(pl):	Dodawanie notatek do kontaktow
+Summary(pl):	Dodawanie notatek do kontaktów
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-contactnotes
 Allows adding personal notes to your contacts.
 
 %description plugin-tools-contactnotes  -l pl
-Umo¿liwia dodawanie notatek do kontaktow.
+Umo¿liwia dodawanie notatek do kontaktów.
 
 %package plugin-tools-cryptography
 Summary:	Messages encryptor
 Summary(pl):	Program do szyfrowania wiadomo¶ci
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-cryptography
-OpenPGP messages encryptor
+OpenPGP messages encryptor.
 
 %description plugin-tools-cryptography -l pl
-Program do szyfrowania wiadomo¶ci przy pomocy OpenPGP
+Program do szyfrowania wiadomo¶ci przy pomocy OpenPGP.
 
 %package plugin-tools-importer
 Summary:	Contact importer
 Summary(pl):	Importer kontaktów
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-importer
 Allows importing contacts from other IM's.
 
-%description plugin-tools-importer  -l pl
+%description plugin-tools-importer -l pl
 Umo¿liwia importowanie kontaktów z innych komunikatorów.
 
 %package plugin-tools-motionaway
 Summary:	Sets away status when not detecting movement near the computer
 Summary(pl):	Zmienia status na zajêty je¶li nie wykrywa ruchu wokó³ komputera
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-motionaway
-Sets away status when not detecting movement near the computer
+Sets away status when not detecting movement near the computer.
 
 %description plugin-tools-motionaway  -l pl
-Zmienia status na zajêty je¶li nie wykrywa ruchu wokó³ komputera
+Zmienia status na zajêty je¶li nie wykrywa ruchu wokó³ komputera.
 
 %package plugin-tools-translator
 Summary:	Uses babelfish to translate messages
 Summary(pl):	Wykorzystuje babelfish do t³umaczenia wiadomo¶ci
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-translator
-Uses babelfish to translate messages
+Uses babelfish to translate messages.
 
 %description plugin-tools-translator -l pl
-Wykorzystuje babelfish do t³umaczenia wiadomo¶ci
+Wykorzystuje babelfish do t³umaczenia wiadomo¶ci.
 
 %package plugin-protocols-aim
 Summary:	Adds AIM protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u AIM
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-aim
-Adds AIM protocol support
+Adds AIM protocol support.
 
 %description plugin-protocols-aim -l pl
-Dodaje obs³ugê protoko³u AIM
+Dodaje obs³ugê protoko³u AIM.
 
 %package plugin-protocols-gg
 Summary:	Adds GaduGadu protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u GaduGadu
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-gg
+Adds GaguGadu protocol support.
+
 %description plugin-protocols-gg -l pl
-Dodaje obs³ugê protoko³u GaduGadu
+Dodaje obs³ugê protoko³u GaduGadu.
 
 %package plugin-protocols-icq
 Summary:	Adds ICQ protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u ICQ
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-icq
-Adds ICQ protocol support
+Adds ICQ protocol support.
 
 %description plugin-protocols-icq -l pl
-Dodaje obs³ugê protoko³u ICQ
+Dodaje obs³ugê protoko³u ICQ.
 
 %package plugin-protocols-irc
-Summary:	Adds irc support
-Summary(pl):	Dodaje obs³ugê irc
+Summary:	Adds IRC support
+Summary(pl):	Dodaje obs³ugê IRC
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-irc
-Adds irc support
+Adds IRC support.
 
 %description plugin-protocols-irc -l pl
-Dodaje obs³ugê irc
+Dodaje obs³ugê IRC.
 
 %package plugin-protocols-jabber
-Summary:	Adds Jabber  protocol support
+Summary:	Adds Jabber protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u Jabber
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-jabber
-Adds Jabber protocol support
+Adds Jabber protocol support.
 
 %description plugin-protocols-jabber -l pl
-Dodaje obs³ugê protoko³u Jabber
+Dodaje obs³ugê protoko³u Jabber.
 
 %package plugin-protocols-msn
 Summary:	Adds MSN protocol support
-Summary(pl):	Dodaje obs³ugê protoko³u
+Summary(pl):	Dodaje obs³ugê protoko³u MSN
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-msn
-Adds MSN protocol support
+Adds MSN protocol support.
 
 %description plugin-protocols-msn -l pl
-Dodaje obs³ugê protoko³u MSN
+Dodaje obs³ugê protoko³u MSN.
 
 %package plugin-protocols-oscar
-Summary:	Adds OSCAR  protocol support
+Summary:	Adds OSCAR protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u OSCAR
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-oscar
-Adds OSCAR protocol support
+Adds OSCAR protocol support.
 
 %description plugin-protocols-oscar -l pl
-Dodaje obs³ugê protoko³u OSCAR
+Dodaje obs³ugê protoko³u OSCAR.
 
 %package plugin-protocols-sms
 Summary:	Adds SMS contact support
 Summary(pl):	Dodaje obs³ugê kontaktów SMS
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-sms
-Adds SMS contact support
+Adds SMS contact support.
 
 %description plugin-protocols-sms -l pl
-Dodaje obs³ugê kontaktów SMS
+Dodaje obs³ugê kontaktów SMS.
 
 %package plugin-protocols-winpopup
 Summary:	Adds winpopup messaging support
 Summary(pl):	Dodaje obs³ugê komunikacji via winpopup
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-winpopup
-Adds winpopup messaging support
+Adds winpopup messaging support.
 
 %description plugin-protocols-winpopup -l pl
-Dodaje obs³ugê komunikacji via winpopup
+Dodaje obs³ugê komunikacji via winpopup.
 
 %package plugin-protocols-yahoo
 Summary:	Adds yahoo protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u yahoo
 Group:		X11/Applications/Networking
-Requires:	kopete >= %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-protocols-yahoo
-Adds yahoo protocol support
+Adds yahoo protocol support.
 
 %description plugin-protocols-yahoo -l pl
-Dodaje obs³ugê protoko³u yahoo
+Dodaje obs³ugê protoko³u yahoo.
 
 %prep
 %setup -q -n %{name}-%{_snapshot}
@@ -253,37 +262,36 @@ Dodaje obs³ugê protoko³u yahoo
 %{__make}
 cd kopete/protocols/sms
 %{__make}
-cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 cd kopete/protocols/sms
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-cd ..
+
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 mv -f $RPM_BUILD_ROOT%{_applnkdir}/Internet/kopete.desktop $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 mv -f $RPM_BUILD_ROOT%{_datadir}/icons $RPM_BUILD_ROOT%{_pixmapsdir}
 mv -f $RPM_BUILD_ROOT%{_datadir}/apps/kopete/*.png $RPM_BUILD_ROOT%{_datadir}/apps/kopete/pics/
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
-#%doc
 %attr(755,root,root) %{_bindir}/kopete
 %attr(755,root,root) %{_libdir}/libkopete*.*
-%{_applnkdir}
-%{_pixmapsdir}
-%{_datadir}/sounds
+%{_applnkdir}/Network/Communications/*
+%{_pixmapsdir}/*
+%{_datadir}/sounds/*
+%dir %{_datadir}/apps/kopete
 %{_datadir}/apps/kopete/*rc
 %{_datadir}/apps/kopete/*.html
+%dir %{_datadir}/apps/kopete/pics
 %{_datadir}/apps/kopete/pics/addside.png
 %{_datadir}/apps/kopete/pics/admin_icon.png
 %{_datadir}/apps/kopete/pics/aol_icon.png
