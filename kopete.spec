@@ -1,13 +1,13 @@
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
-Version:	0.7.1
+Version:	0.7.2
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	a245854fa1d17198e2559513a3315ed2
+# Source0-md5:	c1158d8b9f73e158344123eb8bc3505e
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
