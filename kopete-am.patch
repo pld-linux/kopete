@@ -1,9 +1,0 @@
---- kopete/kopete/protocols/yahoo/ui/Makefile.am.orig	Mon Nov 18 21:12:22 2002
-+++ kopete/kopete/protocols/yahoo/ui/Makefile.am	Mon Nov 18 21:12:31 2002
-@@ -4,5 +4,5 @@
- 		$(all_includes)
- 
- libkopeteyahooui_la_METASOURCES = AUTO
--libkopeteyahooui_la_SOURCES = yahooadd.ui dlgpreferences.ui empty.cpp
-+libkopeteyahooui_la_SOURCES = dlgpreferences.ui empty.cpp
- EXTRA_DIST = dlgrename.ui
