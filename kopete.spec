@@ -8,7 +8,7 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	%{name}-%{_snapshot}.tar.bz2
-Patch0		%{name}-qssl.patch
+Patch0:		%{name}-qssl.patch
 URL:		http://kopete.kde.org
 Buildrequires:	libpsi-devel >= 20021108
 BuildRequires:	qt-devel >= 3.1
