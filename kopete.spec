@@ -12,6 +12,8 @@ Patch0:		%{name}-am.patch
 URL:		http://kopete.kde.org
 Buildrequires:	libpsi >= 20021108
 BuildRequires:	qt-devel >= 3.1
+BuildRequires:	autoconf
+BuildRequires:	automake
 Requires:	kdelibs >= 3.0.9
 Requires:	qt >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -252,9 +254,9 @@ Dodaje obs³ugê protoko³u yahoo.
 
 %prep
 %setup -q -n %{name}-%{_snapshot}
+%patch0 -p1
 
 %build
-%patch0 -p1
 
 %{__make} -f Makefile.cvs
 %configure
