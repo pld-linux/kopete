@@ -3,14 +3,15 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.5
-Release:	%{_snapshot}.1
+Release:	%{_snapshot}.2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	%{name}-%{_snapshot}.tar.bz2
 Patch0:		%{name}-am.patch
+Patch1:		%{name}-errno.patch
 URL:		http://kopete.kde.org
-Buildrequires:	libpsi >= 20021108
+Buildrequires:	libpsi-devel >= 20021108
 BuildRequires:	qt-devel >= 3.1
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -256,6 +257,7 @@ Dodaje obs³ugê protoko³u yahoo.
 %prep
 %setup -q -n %{name}-%{_snapshot}
 %patch0 -p1
+%patch1 -p1
 
 %build
 
@@ -314,7 +316,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kopete/pics/newmsg.png
 %{_datadir}/apps/kopete/pics/offline-mobile.png
 %{_datadir}/apps/kopete/pics/online-mobile.png
-%{_datadir}/apps/kopete/pics/emoticons
 
 %files plugin-tools-autoaway
 %defattr(644,root,root,755)
