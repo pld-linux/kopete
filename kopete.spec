@@ -1,13 +1,13 @@
-%define		_snapshot	20030217
+#%define		_snapshot	20030217
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
-Version:	0.5
-Release:	%{_snapshot}.2
+Version:	0.6.2
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	%{name}-%{_snapshot}.tar.bz2
+Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-qssl.patch
 URL:		http://kopete.kde.org
 BuildRequires:	autoconf
@@ -298,15 +298,14 @@ Adds yahoo protocol support.
 Dodaje obs³ugê protoko³u yahoo.
 
 %prep
-%setup -q -n %{name}-%{_snapshot}
-%patch0 -p1
+%setup -q
+#%patch0 -p1
 
 %build
 kde_appsdir="%{_applnkdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
-%{__make} -f Makefile.cvs
 %configure
 
 %{__make}
@@ -321,13 +320,15 @@ mv -f $RPM_BUILD_ROOT%{_applnkdir}/Internet/kopete.desktop $RPM_BUILD_ROOT%{_app
 #mv -f $RPM_BUILD_ROOT%{_datadir}/icons $RPM_BUILD_ROOT%{_pixmapsdir}
 mv -f $RPM_BUILD_ROOT%{_datadir}/apps/kopete/*.png $RPM_BUILD_ROOT%{_datadir}/apps/kopete/pics/
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kopete
 %attr(755,root,root) %{_libdir}/libkopete*.*
@@ -359,61 +360,59 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kopete/pics/online-mobile.png
 %{_datadir}/apps/kopete/pics/metacontact_unknown.png
 %{_datadir}/apps/kopete/pics/newmessage.mng
-%{_datadir}/apps/kconf_update/kopete-pluginloader.pl
-%{_datadir}/apps/kconf_update/kopete-pluginloader.upd
 
-##%files plugin-tools-autoaway
-##%defattr(644,root,root,755)
-##%attr(755,root,root) %{_libdir}/kde3/kopete*autoaway*.*
-#%%{_datadir}/apps/kopete/autoaway.desktop
+%files plugin-tools-autoaway
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/kde3/kopete*autoaway*.*
+#%{_datadir}/apps/kopete/autoaway.desktop
 
 %files plugin-tools-conectionstatus
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*connectionstatus*.so
 %{_libdir}/kde3/kopete*connectionstatus*.la
-%{_datadir}/apps/kopete/connectionstatus.desktop
+#%{_datadir}/apps/kopete/connectionstatus.desktop
 
 %files plugin-tools-contactnotes
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*contactnotes*.so
 %{_libdir}/kde3/kopete*contactnotes*.la
-%{_datadir}/apps/kopete/contactnotes.desktop
+#%{_datadir}/apps/kopete/contactnotes.desktop
 
 %files plugin-tools-cryptography
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*cryptography*.so
 %{_libdir}/kde3/kopete*cryptography*.la
-%{_datadir}/apps/kopete/cryptography.desktop
+#%{_datadir}/apps/kopete/cryptography.desktop
 
 %files plugin-tools-importer
 %defattr(644,root,root,755)
 %attr(755,root,root)  %{_libdir}/kde3/kopete*importer*.so*
 %{_libdir}/kde3/kopete*importer*.la
-%{_datadir}/apps/kopete/importer.desktop
+#%{_datadir}/apps/kopete/importer.desktop
 
 %files plugin-tools-nowlistening
 %defattr(644,root,root,755)
 %attr(755,root,root)  %{_libdir}/kde3/kopete*nowlistening*.so
 %{_libdir}/kde3/kopete*nowlistening*.la
-%{_datadir}/apps/kopete/nowlistening.desktop
+#%{_datadir}/apps/kopete/nowlistening.desktop
 
 %files plugin-tools-motionaway
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*motionaway*.so
 %{_libdir}/kde3/kopete*motionaway*.la
-%{_datadir}/apps/kopete/motionaway.desktop
+#%{_datadir}/apps/kopete/motionaway.desktop
 
 %files plugin-tools-translator
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*translator*.so
 %{_libdir}/kde3/kopete*translator*.la
-%{_datadir}/apps/kopete/translator.desktop
+#%{_datadir}/apps/kopete/translator.desktop
 
 %files plugin-tools-webpresence
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*webpresence*.so
 %{_libdir}/kde3/kopete*webpresence*.la
-%{_datadir}/apps/kopete/webpresence.desktop
+#%{_datadir}/apps/kopete/webpresence.desktop
 %{_datadir}/apps/kopete/webpresencedefault.xsl
 %{_datadir}/apps/kopete/wpimages.xsl
 
@@ -426,54 +425,54 @@ rm -rf $RPM_BUILD_ROOT
 %files plugin-protocols-gg
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*gadu*.*
-%{_datadir}/apps/kopete/gadu.desktop
+#%{_datadir}/apps/kopete/gadu.desktop
 %{_datadir}/apps/kopete/pics/gadu*
 %{_datadir}/apps/kopete/pics/gg*
 
 %files plugin-protocols-icq
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*icq*.*
-%{_datadir}/apps/kopete/icq.desktop
+#%{_datadir}/apps/kopete/icq.desktop
 %{_datadir}/apps/kopete/pics/icq*
 
 %files plugin-protocols-irc
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*irc*.*
-%{_datadir}/apps/kopete/irc.desktop
+#%{_datadir}/apps/kopete/irc.desktop
 %{_datadir}/apps/kopete/pics/irc*
 
 %files plugin-protocols-jabber
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*jabber*.*
-%{_datadir}/apps/kopete/jabber.desktop
+#%{_datadir}/apps/kopete/jabber.desktop
 %{_datadir}/apps/kopete/pics/jabber*
 
 %files plugin-protocols-msn
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*msn*.*
-%{_datadir}/apps/kopete/msn.desktop
+#%{_datadir}/apps/kopete/msn.desktop
 %{_datadir}/apps/kopete/pics/msn*
 
 %files plugin-protocols-oscar
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*oscar*.*
-%{_datadir}/apps/kopete/oscar.desktop
+#%{_datadir}/apps/kopete/oscar.desktop
 %{_datadir}/apps/kopete/pics/oscar*
 
 %files plugin-protocols-sms
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*sms*.*
-%{_datadir}/apps/kopete/sms.desktop
+#%{_datadir}/apps/kopete/sms.desktop
 
-%files plugin-protocols-yahoo
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/kde3/kopete*yahoo*.*
-%{_datadir}/apps/kopete/yahoo.desktop
-%{_datadir}/apps/kopete/pics/yahoo*
+#%files plugin-protocols-yahoo
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_libdir}/kde3/kopete*yahoo*.*
+#%{_datadir}/apps/kopete/yahoo.desktop
+#%{_datadir}/apps/kopete/pics/yahoo*
 
 %files plugin-protocols-winpopup
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/winpopup*.sh
 %attr(755,root,root) %{_libdir}/kde3/kopete*wp*.*
-%{_datadir}/apps/kopete/wp.desktop
+#%{_datadir}/apps/kopete/wp.desktop
 %{_datadir}/apps/kopete/pics/wp*
