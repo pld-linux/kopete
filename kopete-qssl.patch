@@ -1,11 +1,12 @@
---- kopete-20021206/kopete/protocols/jabber/Makefile.am~	Sat Dec  7 00:11:30 2002
-+++ kopete-20021206/kopete/protocols/jabber/Makefile.am	Sat Dec  7 00:04:43 2002
-@@ -11,7 +11,7 @@
- 
- kopete_jabber_la_SOURCES = jabberprotocol.cpp jabberresource.cpp jabbercontact.cpp \
-                            jabberprefs.cpp
--kopete_jabber_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN)
-+kopete_jabber_la_LDFLAGS = -no-undefined -module -L$(QTDIR)/lib/qt/plugins-mt/network  $(KDE_PLUGIN)
- kopete_jabber_la_LIBADD  = ../../libkopete/libkopete.la \
+diff -Nur kopete-orig-20021129/kopete/protocols/jabber/Makefile.am kopete-20021129/kopete/protocols/jabber/Makefile.am
+--- kopete-orig-20021129/kopete/protocols/jabber/Makefile.am	Fri Nov 29 15:21:00 2002
++++ kopete-20021129/kopete/protocols/jabber/Makefile.am	Fri Jan 17 00:25:34 2003
+@@ -16,7 +16,7 @@
  	ui/libkopetejabberui.la \
  	-lpsi \
+ 	-lssl \
+-	-lqssl
++	-L/usr/X11R6/lib/qt/plugins-mt/network/
+ 
+ data_DATA = jabber.plugin
+ datadir = $(kde_datadir)/kopete
