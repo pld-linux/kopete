@@ -19,8 +19,6 @@ Requires:	kdelibs >= 3.0.9
 Requires:	qt >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Kopete is a flexible and extendable multiple protocol instant
