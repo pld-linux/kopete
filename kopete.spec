@@ -30,7 +30,7 @@ Obsoletes:	kopete-plugin-tools-autoaway
 Obsoletes:	kopete-plugin-tools-importer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _htmldir        /usr/share/doc/kde/HTML
+%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 Kopete is a flexible and extendable multiple protocol instant
@@ -105,7 +105,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description plugin-tools-contactnotes
 Allows adding personal notes to your contacts.
 
-%description plugin-tools-contactnotes  -l pl
+%description plugin-tools-contactnotes -l pl
 Umo¿liwia dodawanie notatek do kontaktów.
 
 %package plugin-tools-cryptography
@@ -482,13 +482,13 @@ rm -rf $RPM_BUILD_ROOT
 
 #%%files plugin-tools-importer
 #%%defattr(644,root,root,755)
-#%%attr(755,root,root)  %{_libdir}/kde3/kopete*importer*.so*
+#%%attr(755,root,root) %{_libdir}/kde3/kopete*importer*.so*
 #%%{_libdir}/kde3/kopete*importer*.la
 #%{_datadir}/apps/kopete/importer.desktop
 
 %files plugin-tools-nowlistening
 %defattr(644,root,root,755)
-%attr(755,root,root)  %{_libdir}/kde3/kopete*nowlistening*.so
+%attr(755,root,root) %{_libdir}/kde3/kopete*nowlistening*.so
 %{_libdir}/kde3/kopete*nowlistening*.la
 %{_datadir}/services/nowlistening.desktop
 
