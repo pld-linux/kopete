@@ -1,12 +1,16 @@
-diff -Nur kopete-orig-20021129/kopete/protocols/jabber/Makefile.am kopete-20021129/kopete/protocols/jabber/Makefile.am
---- kopete-orig-20021129/kopete/protocols/jabber/Makefile.am	Fri Nov 29 15:21:00 2002
-+++ kopete-20021129/kopete/protocols/jabber/Makefile.am	Fri Jan 17 00:25:34 2003
-@@ -16,7 +16,7 @@
+--- kopete-20030217/kopete/protocols/jabber/Makefile.am.orig	Mon Feb 17 13:32:09 2003
++++ kopete-20030217/kopete/protocols/jabber/Makefile.am	Mon Feb 17 13:33:55 2003
+@@ -12,10 +12,11 @@
+ kopete_jabber_la_SOURCES = jabberprotocol.cpp jabberresource.cpp jabbercontact.cpp \
+                            jabberprefs.cpp jabbermessagemanager.cpp jabberformtranslator.cpp \
+                            jabberformlineedit.cpp
+-kopete_jabber_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN)
++kopete_jabber_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) 	-R/usr/X11R6/lib/qt/plugins-mt/network/
+ kopete_jabber_la_LIBADD  = ../../libkopete/libkopete.la \
  	ui/libkopetejabberui.la \
- 	-lpsi \
- 	-lssl \
--	-lqssl
-+	-L/usr/X11R6/lib/qt/plugins-mt/network/
+-	-lpsi
++	-lpsi \
++	-L/usr/X11R6/lib/qt/plugins-mt/network/ 
  
- data_DATA = jabber.plugin
+ data_DATA = jabber.desktop
  datadir = $(kde_datadir)/kopete
