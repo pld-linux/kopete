@@ -14,6 +14,7 @@ Buildrequires:	libpsi >= 20021108
 BuildRequires:	qt-devel >= 3.1
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	fam-devel
 Requires:	kdelibs >= 3.0.9
 Requires:	qt >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
