@@ -91,7 +91,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description plugin-tools-contactnotes
 Allows adding personal notes to your contacts.
 
-%description plugin-tools-contactnotes  -l pl
+%description plugin-tools-contactnotes -l pl
 Umo¿liwia dodawanie notatek do kontaktów.
 
 %package plugin-tools-cryptography
