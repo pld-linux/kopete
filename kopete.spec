@@ -28,7 +28,6 @@ Requires:	qt >= 3.1
 Obsoletes:	kopete-plugin-tools-autoaway
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 Kopete is a flexible and extendable multiple protocol instant
 messaging system designed as a plugin-based system. All protocols are
@@ -116,21 +115,22 @@ Allows importing contacts from other IM's.
 %description plugin-tools-importer -l pl
 Umo¿liwia importowanie kontaktów z innych komunikatorów.
 
-
 %package plugin-tools-nowlistening
 Summary:	Playlist informer
 Summary(pl):	Informator o playliscie
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{version}-%{release}
 Requires:  	xmms >= 1.0.0
-Requires:  kdemultimedia-noatun >= 3.1
-Requires:  kdemultimedia-kscd >= 3.1
+Requires:	kdemultimedia-noatun >= 3.1
+Requires:	kdemultimedia-kscd >= 3.1
 
 %description plugin-tools-nowlistening
-This plugin tells selected live chats what you're currently listening to in xmms/kscd/noatun.
+This plugin tells selected live chats what you're currently listening
+to in xmms/kscd/noatun.
 
 %description plugin-tools-nowlistening -l pl
-Ta wtyczka wypisuje podczas rozmow nazwe aktualnie sluchanej piosenki w xmms/kscd/noatun.
+Ta wtyczka wypisuje podczas rozmow nazwê aktualnie s³uchanej piosenki
+w xmms/kscd/noatun.
 
 %package plugin-tools-motionaway
 Summary:	Sets away status when not detecting movement near the computer
@@ -139,24 +139,28 @@ Group:		X11/Applications/Networking
 Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-motionaway
-Sets away status when not detecting movement near the computer.
+This plugin sets away status when not detecting movement near the
+computer.
 
-%description plugin-tools-motionaway  -l pl
-Zmienia status na zajêty je¶li nie wykrywa ruchu wokó³ komputera.
+%description plugin-tools-motionaway -l pl
+Ta wtyczka zmienia status na zajêty je¶li nie wykrywa ruchu wokó³
+komputera.
 
 %package plugin-tools-webpresence
 Summary:	Web contactlist presenter
-Summary(pl):	Wy¶wietlacz listy kontaktów na www.
+Summary(pl):	Wy¶wietlacz listy kontaktów na WWW
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{version}-%{release}
 Requires:  	libxml2 >= 2.4.8
 Requires:  	libxslt >= 1.0.7
 
 %description plugin-tools-webpresence
-Show the status of (parts of) your contactlist on a webpage.
+This plugin shows the status of (parts of) your contactlist on a
+webpage.
 
 %description plugin-tools-webpresence -l pl
-Pokazuje status (ca³ej lub cze¶ci) listy kontaktów na stronie www.
+Ta wtyczka pokazuje status (ca³ej lub cze¶ci) listy kontaktów na
+stronie WWW.
 
 %package plugin-tools-translator
 Summary:	Uses babelfish to translate messages
@@ -165,10 +169,10 @@ Group:		X11/Applications/Networking
 Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tools-translator
-Uses babelfish to translate messages.
+This plugin uses babelfish to translate messages.
 
 %description plugin-tools-translator -l pl
-Wykorzystuje babelfish do t³umaczenia wiadomo¶ci.
+Ta wtyczka wykorzystuje babelfish do t³umaczenia wiadomo¶ci.
 
 %package plugin-protocols-aim
 Summary:	Adds AIM protocol support
@@ -295,7 +299,6 @@ Dodaje obs³ugê protoko³u yahoo.
 %setup -q -n %{name}-%{_snapshot}
 %patch0 -p1
 
-
 %build
 kde_appsdir="%{_applnkdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
@@ -309,7 +312,6 @@ kde_icondir="%{_pixmapsdir}"; export kde_icondir
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
 
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
