@@ -10,25 +10,24 @@ Group:		X11/Applications/Networking
 Source0:	%{name}-%{_snapshot}.tar.bz2
 Patch0:		%{name}-qssl.patch
 URL:		http://kopete.kde.org
-Buildrequires:	libpsi-devel >= 20021108
-BuildRequires:	qt-devel >= 3.1
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fam-devel
-BuildRequires:	perl-modules
+Buildrequires:	libpsi-devel >= 20021108
 BuildRequires:	libxml2-devel >= 2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
-BuildRequires:	xmms-devel >= 1.0.0
 BuildRequires:	kdemultimedia-devel >= 3.1
-BuildRequires:	kdemultimedia-noatun >= 3.1
 BuildRequires:	kdemultimedia-kscd >= 3.1
-Requires:	perl-modules
+BuildRequires:	kdemultimedia-noatun >= 3.1
+BuildRequires:	perl-modules
+BuildRequires:	qt-devel >= 3.1
+BuildRequires:	xmms-devel >= 1.0.0
 Requires:	kdelibs >= 3.0.9
+Requires:	perl-modules
 Requires:	qt >= 3.1
 Obsoletes:	kopete-plugin-tools-autoaway
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 %define         _htmldir        /usr/share/doc/kde/HTML
 
 %description
@@ -57,7 +56,7 @@ nowych programistów, na których mo¿na opieraæ nowe wtyczki.
 
 %package plugin-tools-autoaway
 Summary:	An autoaway plugin
-Summary(pl):	Plugin automatycznego przej¶cia w stan zajêty
+Summary(pl):	Wtyczka automatycznego przej¶cia w stan zajêty
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{version}-%{release}
 
