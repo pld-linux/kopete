@@ -3,7 +3,7 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.5
-Release:	%{_snapshot}.1
+Release:	%{_snapshot}.2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
