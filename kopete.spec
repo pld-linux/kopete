@@ -1,4 +1,4 @@
-%define		_snapshot	030731
+%define		_snapshot	030821
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
@@ -399,6 +399,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kopete
+%dir %{_bindir}/kconf_update_bin/
+%attr(755,root,root) %{_bindir}/kconf_update_bin/kopete-account-kconf_update
 %attr(755,root,root) %{_libdir}/libkopete*.so*
 # Theeese must get removed sooner or later
 %attr(755,root,root) %{_libdir}/kde3/libkrichtexteditpart.so
@@ -415,27 +417,27 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kopete/styles/*
 #%%{_datadir}/apps/kopete/*.html
 %dir %{_datadir}/apps/kopete/pics
-%{_datadir}/apps/kopete/pics/addside.png
+#%%{_datadir}/apps/kopete/icons/hicolor/*/*/addside.png
 %{_datadir}/apps/kopete/icons/hicolor/*/*/admin_icon.png
 %{_datadir}/apps/kopete/icons/hicolor/*/*/aol_icon.png
 #{_datadir}/apps/kopete/icons/hicolor/*/*/away-mobile.png
 %{_datadir}/apps/kopete/icons/hicolor/*/*/dt_icon.png
-%{_datadir}/apps/kopete/pics/emoticon.png
+%{_datadir}/apps/kopete/icons/hicolor/*/*/emoticon.png
 %{_datadir}/apps/kopete/pics/emoticons
 %{_datadir}/apps/kopete/icons/hicolor/*/*/free_icon.png
-%{_datadir}/apps/kopete/pics/history.png
+#%%{_datadir}/apps/kopete/icons/hicolor/*/*/history.png
 %{_datadir}/apps/kopete/icons/*/*/*/kopeteavailable.png
 %{_datadir}/apps/kopete/icons/*/*/*/kopeteaway.png
-%{_datadir}/apps/kopete/pics/status_unknown.png
+%{_datadir}/apps/kopete/icons/hicolor/*/*/status_unknown.png
 #%%{_datadir}/apps/kopete/icons/*/*/*/kopetestatus.png
-%{_datadir}/apps/kopete/pics/metacontact_away.png
-%{_datadir}/apps/kopete/pics/metacontact_offline.png
-%{_datadir}/apps/kopete/pics/metacontact_online.png
+%{_datadir}/apps/kopete/icons/hicolor/*/*/metacontact_away.png
+%{_datadir}/apps/kopete/icons/hicolor/*/*/metacontact_offline.png
+%{_datadir}/apps/kopete/icons/hicolor/*/*/metacontact_online.png
 #%%{_datadir}/apps/kopete/icons/hicolor/*/*/mobile.png
-%{_datadir}/apps/kopete/pics/newmsg.png
+%{_datadir}/apps/kopete/icons/hicolor/*/*/newmsg.png
 #%%{_datadir}/apps/kopete/icons/hicolor/*/*/offline-mobile.png
-#%%{_datadir}/apps/kopete/pics/online-mobile.png
-%{_datadir}/apps/kopete/pics/metacontact_unknown.png
+#%%{_datadir}/apps/kopete/icons/hicolor/*/*/online-mobile.png
+%{_datadir}/apps/kopete/icons/hicolor/*/*/metacontact_unknown.png
 %{_datadir}/apps/kopete/pics/newmessage.mng
 %{_datadir}/servicetypes/kopeteplugin.desktop
 %{_datadir}/servicetypes/kopeteprotocol.desktop
