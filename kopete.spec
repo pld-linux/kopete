@@ -366,7 +366,7 @@ rm -rf $RPM_BUILD_ROOT
 ##%files plugin-tools-autoaway
 ##%defattr(644,root,root,755)
 ##%attr(755,root,root) %{_libdir}/kde3/kopete*autoaway*.*
-##%{_datadir}/apps/kopete/autoaway.desktop
+#%%{_datadir}/apps/kopete/autoaway.desktop
 
 %files plugin-tools-conectionstatus
 %defattr(644,root,root,755)
@@ -421,8 +421,8 @@ rm -rf $RPM_BUILD_ROOT
 ##%files plugin-protocols-aim
 ##%defattr(644,root,root,755)
 ##%attr(755,root,root) %{_libdir}/kde3/kopete*aim*.*
-##%{_datadir}/apps/kopete/aim.desktop
-##%{_datadir}/apps/kopete/pics/aim*
+#%%{_datadir}/apps/kopete/aim.desktop
+#%%{_datadir}/apps/kopete/pics/aim*
 
 %files plugin-protocols-gg
 %defattr(644,root,root,755)
