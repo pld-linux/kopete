@@ -8,6 +8,7 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	c97ae795b80814f1824ca750a85da6a2
 Patch0:		%{name}-qssl.patch
 URL:		http://kopete.kde.org
 BuildRequires:	autoconf
