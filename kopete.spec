@@ -123,7 +123,7 @@ Summary:	Playlist informer
 Summary(pl):	Informator o playliscie
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:  	xmms >= 1.0.0
+Requires:	xmms >= 1.0.0
 Requires:	kdemultimedia-noatun >= 3.1
 Requires:	kdemultimedia-kscd >= 3.1
 
@@ -154,8 +154,8 @@ Summary:	Web contactlist presenter
 Summary(pl):	Wy¶wietlacz listy kontaktów na WWW
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:  	libxml2 >= 2.4.8
-Requires:  	libxslt >= 1.0.7
+Requires:	libxml2 >= 2.4.8
+Requires:	libxslt >= 1.0.7
 
 %description plugin-tools-webpresence
 This plugin shows the status of (parts of) your contactlist on a
