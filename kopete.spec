@@ -59,7 +59,7 @@ nowych programistów, na których mo¿na opieraæ nowe wtyczki.
 Summary:	An autoaway plugin
 Summary(pl):	Wtyczka automatycznego przej¶cia w stan zajêty
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-tools-autoaway
 Automatically changes status to away. Conditions are configurable.
@@ -72,7 +72,7 @@ których ma nastapiæ, s± konfigurowalne.
 Summary:	Internet connection detector
 Summary(pl):	Wykrywacz po³±czeñ internetowych
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-tools-conectionstatus
 Automatically detects whether the internet connection is available or
@@ -86,7 +86,7 @@ nie.
 Summary:	Add personal notes to your contacts
 Summary(pl):	Dodawanie notatek do kontaktów
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-tools-contactnotes
 Allows adding personal notes to your contacts.
@@ -98,7 +98,7 @@ Umo¿liwia dodawanie notatek do kontaktów.
 Summary:	Messages encryptor
 Summary(pl):	Program do szyfrowania wiadomo¶ci
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-tools-cryptography
 OpenPGP messages encryptor.
@@ -110,7 +110,7 @@ Program do szyfrowania wiadomo¶ci przy pomocy OpenPGP.
 Summary:	Contact importer
 Summary(pl):	Importer kontaktów
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-tools-importer
 Allows importing contacts from other IM's.
@@ -122,7 +122,7 @@ Umo¿liwia importowanie kontaktów z innych komunikatorów.
 Summary:	Playlist informer
 Summary(pl):	Informator o playliscie
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:  	xmms >= 1.0.0
 Requires:	kdemultimedia-noatun >= 3.1
 Requires:	kdemultimedia-kscd >= 3.1
@@ -139,7 +139,7 @@ w xmms/kscd/noatun.
 Summary:	Sets away status when not detecting movement near the computer
 Summary(pl):	Zmienia status na zajêty je¶li nie wykrywa ruchu wokó³ komputera
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-tools-motionaway
 This plugin sets away status when not detecting movement near the
@@ -153,7 +153,7 @@ komputera.
 Summary:	Web contactlist presenter
 Summary(pl):	Wy¶wietlacz listy kontaktów na WWW
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:  	libxml2 >= 2.4.8
 Requires:  	libxslt >= 1.0.7
 
@@ -169,7 +169,7 @@ stronie WWW.
 Summary:	Uses babelfish to translate messages
 Summary(pl):	Wykorzystuje babelfish do t³umaczenia wiadomo¶ci
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-tools-translator
 This plugin uses babelfish to translate messages.
@@ -181,7 +181,7 @@ Ta wtyczka wykorzystuje babelfish do t³umaczenia wiadomo¶ci.
 Summary:	Adds AIM protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u AIM
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-aim
 Adds AIM protocol support.
@@ -193,7 +193,7 @@ Dodaje obs³ugê protoko³u AIM.
 Summary:	Adds GaduGadu protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u GaduGadu
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-gg
 Adds GaguGadu protocol support.
@@ -205,7 +205,7 @@ Dodaje obs³ugê protoko³u GaduGadu.
 Summary:	Adds ICQ protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u ICQ
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-icq
 Adds ICQ protocol support.
@@ -217,7 +217,7 @@ Dodaje obs³ugê protoko³u ICQ.
 Summary:	Adds IRC support
 Summary(pl):	Dodaje obs³ugê IRC
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-irc
 Adds IRC support.
@@ -229,7 +229,7 @@ Dodaje obs³ugê IRC.
 Summary:	Adds Jabber protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u Jabber
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	libpsi >= 20021108
 
 %description plugin-protocols-jabber
@@ -242,7 +242,7 @@ Dodaje obs³ugê protoko³u Jabber.
 Summary:	Adds MSN protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u MSN
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-msn
 Adds MSN protocol support.
@@ -254,7 +254,7 @@ Dodaje obs³ugê protoko³u MSN.
 Summary:	Adds OSCAR protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u OSCAR
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-oscar
 Adds OSCAR protocol support.
@@ -266,7 +266,7 @@ Dodaje obs³ugê protoko³u OSCAR.
 Summary:	Adds SMS contact support
 Summary(pl):	Dodaje obs³ugê kontaktów SMS
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-sms
 Adds SMS contact support.
@@ -278,7 +278,7 @@ Dodaje obs³ugê kontaktów SMS.
 Summary:	Adds winpopup messaging support
 Summary(pl):	Dodaje obs³ugê komunikacji via winpopup
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-winpopup
 Adds winpopup messaging support.
@@ -290,7 +290,7 @@ Dodaje obs³ugê komunikacji via winpopup.
 Summary:	Adds yahoo protocol support
 Summary(pl):	Dodaje obs³ugê protoko³u yahoo
 Group:		X11/Applications/Networking
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin-protocols-yahoo
 Adds yahoo protocol support.
