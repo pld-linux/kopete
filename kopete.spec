@@ -28,6 +28,9 @@ Requires:	qt >= 3.1
 Obsoletes:	kopete-plugin-tools-autoaway
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define         _htmldir        /usr/share/doc/kde/HTML
+
+
 %description
 Kopete is a flexible and extendable multiple protocol instant
 messaging system designed as a plugin-based system. All protocols are
