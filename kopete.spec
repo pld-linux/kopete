@@ -19,18 +19,17 @@ BuildRequires:	libxslt-devel >= 1.0.7
 BuildRequires:	kdemultimedia-devel >= 3.1
 BuildRequires:	kdemultimedia-kscd >= 3.1
 BuildRequires:	kdemultimedia-noatun >= 3.1
+BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	qt-devel >= 3.1
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	xmms-devel >= 1.0.0
-BuildRequires:	openssl-devel
 Requires:	kdelibs >= 3.0.9
 Requires:	perl-modules
 Requires:	qt >= 3.1
 Obsoletes:	kopete-plugin-tools-autoaway
 Obsoletes:	kopete-plugin-tools-importer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 Kopete is a flexible and extendable multiple protocol instant
@@ -81,7 +80,6 @@ Autoreplaces some text you can choose.
 %description plugin-tools-autoreplace -l pl
 Wtyczka automatycznej zamiany tekstu.
 
-
 %package plugin-tools-conectionstatus
 Summary:	Internet connection detector
 Summary(pl):	Wykrywacz po³±czeñ internetowych
@@ -120,7 +118,6 @@ OpenPGP messages encryptor.
 %description plugin-tools-cryptography -l pl
 Program do szyfrowania wiadomo¶ci przy pomocy OpenPGP.
 
-
 %package plugin-tools-history
 Summary:	A history plugin
 Summary(pl):	Wtyczka obs³uguj±ca historiê rozmów
@@ -144,7 +141,6 @@ A highlighter plugin.
 
 %description plugin-tools-highlight -l pl
 Wtyczka podkre¶laj±ca wybrane teksty.
-
 
 %package plugin-tools-importer
 Summary:	Contact importer
@@ -200,7 +196,6 @@ A spell checking plugin.
 
 %description plugin-tools-spellcheck -l pl
 Wtyczka sprawdzaj±ca pisownie.
-
 
 %package plugin-tools-texteffect
 Summary:	A plugin that adds nice effects to your messages
@@ -368,15 +363,16 @@ Dodaje obs³ugê protoko³u yahoo.
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_iconsdir}"; export kde_icondir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 mv $RPM_BUILD_ROOT%{_desktopdir}/{Internet/,}kopete.desktop
 echo "Categories=Qt;Network;X-Communication" >> $RPM_BUILD_ROOT%{_desktopdir}/kopete.desktop
@@ -503,7 +499,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete*spellcheck*.so
 %{_libdir}/kde3/kopete*spellcheck*.la
 %{_datadir}/services/spellcheck.desktop
-
 
 %files plugin-tools-texteffect
 %defattr(644,root,root,755)
