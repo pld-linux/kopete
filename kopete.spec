@@ -6,13 +6,13 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}.tar.bz2
 # Source0-md5:	c1158d8b9f73e158344123eb8bc3505e
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fam-devel
-Buildrequires:	libpsi-devel >= 20021108
+BuildRequires:	libpsi-devel >= 20021108
 BuildRequires:	libgadu-devel >= 1.0
 BuildRequires:	libxml2-devel >= 2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
