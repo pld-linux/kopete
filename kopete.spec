@@ -2,7 +2,7 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.10.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -407,7 +407,6 @@ echo "Categories=Qt;Network;X-Communication" >> $RPM_BUILD_ROOT%{_desktopdir}/kd
 install -d $RPM_BUILD_ROOT%{_iconsdir}
 
 %find_lang %{name} --with-kde
-cp -r $RPM_BUILD_ROOT $RPM_BUILD_ROOT.kopia
 
 %clean
 rm -rf $RPM_BUILD_ROOT
