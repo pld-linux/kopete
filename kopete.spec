@@ -2,7 +2,7 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.10.3
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -29,7 +29,6 @@ Requires:	kdelibs >= 3.0.9
 Requires:	perl-modules
 Requires:	qt >= 3.1
 Obsoletes:	kopete-plugin-tools-autoaway
-Obsoletes:	kopete-plugin-tools-importer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -57,31 +56,17 @@ wtyczek u¿ywanych przez wiêkszo¶æ u¿ytkowników oraz szablony dla
 nowych programistów, na których mo¿na opieraæ nowe wtyczki.
 
 %package devel
-Summary:	kopete - header files and development documentation
-Summary(pl):	kopete - pliki nag³ówkowe i dokumentacja do kopete
+Summary:	kopete - header files
+Summary(pl):	kopete - pliki nag³ówkowe do kopete
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
-This package contains header files and development documentation for
-kopete.
+This package contains header files for kopete.
 
 %description devel -l pl
-Pakiet ten zawiera pliki nag³ówkowe i dokumentacjê potrzebn± przy
-pisaniu w³asnych programów wykorzystuj±cych kopete.
-
-%package plugin-tools-autoaway
-Summary:	An autoaway plugin
-Summary(pl):	Wtyczka automatycznego przej¶cia w stan zajêty
-Group:		X11/Applications/Networking
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description plugin-tools-autoaway
-Automatically changes status to away. Conditions are configurable.
-
-%description plugin-tools-autoaway -l pl
-Automatycznie zmienia status na zajêty. Warunki, po zaistnieniu
-których ma nastapiæ, s± konfigurowalne.
+Pakiet ten zawiera pliki nag³ówkowe potrzebn± przy pisaniu w³asnych
+programów wykorzystuj±cych kopete.
 
 %package plugin-tools-autoreplace
 Summary:	Autoreplaces some text you can choose
@@ -157,18 +142,6 @@ A highlighter plugin.
 %description plugin-tools-highlight -l pl
 Wtyczka podkre¶laj±ca wybrane teksty.
 
-%package plugin-tools-importer
-Summary:	Contact importer
-Summary(pl):	Importer kontaktów
-Group:		X11/Applications/Networking
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description plugin-tools-importer
-Allows importing contacts from other IM's.
-
-%description plugin-tools-importer -l pl
-Umo¿liwia importowanie kontaktów z innych komunikatorów.
-
 %package plugin-tools-nowlistening
 Summary:	Playlist informer
 Summary(pl):	Informator o playliscie
@@ -185,32 +158,6 @@ to in xmms/kscd/noatun.
 %description plugin-tools-nowlistening -l pl
 Ta wtyczka wypisuje podczas rozmow nazwê aktualnie s³uchanej piosenki
 w xmms/kscd/noatun.
-
-%package plugin-tools-motionaway
-Summary:	Sets away status when not detecting movement near the computer
-Summary(pl):	Zmienia status na zajêty je¶li nie wykrywa ruchu wokó³ komputera
-Group:		X11/Applications/Networking
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description plugin-tools-motionaway
-This plugin sets away status when not detecting movement near the
-computer.
-
-%description plugin-tools-motionaway -l pl
-Ta wtyczka zmienia status na zajêty je¶li nie wykrywa ruchu wokó³
-komputera.
-
-%package plugin-tools-spellcheck
-Summary:	A spell checking plugin
-Summary(pl):	Wtyczka sprawdzaj±ca pisownie.
-Group:		X11/Applications/Networking
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description plugin-tools-spellcheck
-A spell checking plugin.
-
-%description plugin-tools-spellcheck -l pl
-Wtyczka sprawdzaj±ca pisownie.
 
 %package plugin-tools-texteffect
 Summary:	A plugin that adds nice effects to your messages
@@ -325,18 +272,6 @@ Adds MSN protocol support.
 %description plugin-protocols-msn -l pl
 Dodaje obs³ugê protoko³u MSN.
 
-%package plugin-protocols-oscar
-Summary:	Adds OSCAR protocol support
-Summary(pl):	Dodaje obs³ugê protoko³u OSCAR
-Group:		X11/Applications/Networking
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description plugin-protocols-oscar
-Adds OSCAR protocol support.
-
-%description plugin-protocols-oscar -l pl
-Dodaje obs³ugê protoko³u OSCAR.
-
 %package plugin-protocols-sms
 Summary:	Adds SMS contact support
 Summary(pl):	Dodaje obs³ugê kontaktów SMS
@@ -348,18 +283,6 @@ Adds SMS contact support.
 
 %description plugin-protocols-sms -l pl
 Dodaje obs³ugê kontaktów SMS.
-
-%package plugin-protocols-winpopup
-Summary:	Adds winpopup messaging support
-Summary(pl):	Dodaje obs³ugê komunikacji via winpopup
-Group:		X11/Applications/Networking
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description plugin-protocols-winpopup
-Adds winpopup messaging support.
-
-%description plugin-protocols-winpopup -l pl
-Dodaje obs³ugê komunikacji via winpopup.
 
 %package plugin-protocols-yahoo
 Summary:	Adds yahoo protocol support
@@ -402,7 +325,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#mv $RPM_BUILD_ROOT%{_desktopdir}/{Internet/,}kopete.desktop
 echo "Categories=Qt;Network;X-Communication" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kopete.desktop
 install -d $RPM_BUILD_ROOT%{_iconsdir}
 
@@ -420,8 +342,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/kconf_update_bin
 %attr(755,root,root) %{_libdir}/kconf_update_bin/*
 %attr(755,root,root) %{_libdir}/libkopete*.so.*
-# Theeese must get removed sooner or later
-#/
 %dir %{_datadir}/services/kconfiguredialog/
 %{_datadir}/services/kconfiguredialog/*
 
@@ -432,31 +352,17 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/apps/kopete
 %{_datadir}/apps/kopete/*rc
 %{_datadir}/apps/kopete/styles/*
-#%%{_datadir}/apps/kopete/*.html
 %dir %{_datadir}/apps/kopete/pics
-#%%{_datadir}/apps/kopete/icons/hicolor/*/*/addside.png
-#%{_datadir}/apps/kopete/icons/hicolor/*/*/admin_icon.png
-#%{_datadir}/apps/kopete/icons/hicolor/*/*/aol_icon.png
-#{_datadir}/apps/kopete/icons/hicolor/*/*/away-mobile.png
-#%{_datadir}/apps/kopete/icons/hicolor/*/*/dt_icon.png
 %{_datadir}/mimelnk/application/x-kopete-emoticons.desktop
 %{_datadir}/apps/kopete/icons/*/*/*/emoticon.png
-#{_datadir}/apps/kopete/pics/emoticons
-#{_datadir}/apps/kopete/icons/hicolor/*/*/free_icon.png
-#%%{_datadir}/apps/kopete/icons/hicolor/*/*/history.png
 %{_datadir}/apps/kopete/icons/*/*/*/kopeteavailable.png
 %{_datadir}/apps/kopete/icons/*/*/*/kopeteaway.png
 %{_datadir}/apps/kopete/icons/*/*/*/status_unknown.png
-#%%{_datadir}/apps/kopete/icons/*/*/*/kopetestatus.png
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/metacontact_away.png
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/metacontact_offline.png
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/metacontact_online.png
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/metacontact_unknown.png
-#%%{_datadir}/apps/kopete/icons/hicolor/*/*/mobile.png
 %{_datadir}/apps/kopete/icons/*/*/*/newmsg.png
-#%%{_datadir}/apps/kopete/icons/hicolor/*/*/offline-mobile.png
-#%%{_datadir}/apps/kopete/icons/hicolor/*/*/online-mobile.png
-#%{_datadir}/apps/kopete/icons/hicolor/*/*/metacontact_unknown.png
 %{_datadir}/apps/kopete/icons/*/*/*/newmessage.mng
 %{_datadir}/apps/kopete/icons/*/*/*/account_offline_overlay.svgz
 %{_datadir}/apps/kopete/icons/*/*/*/account_offline_overlay.png
@@ -503,23 +409,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/
 %dir %{_includedir}/kopete
 %{_includedir}/kopete/*.h
 %dir %{_includedir}/kopete/ui
 %{_includedir}/kopete/ui/*.h
-#%{_libdir}/kde3/*.so
-
-#%%files plugin-tools-autoaway
-#%%defattr(644,root,root,755)
-#%%attr(755,root,root) %{_libdir}/kde3/kopete*autoaway*.*
-#%%{_datadir}/apps/kopete/autoaway.desktop
 
 %files plugin-tools-autoreplace
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*autoreplace*.so
 %{_libdir}/kde3/kopete*autoreplace*.la
-#%{_datadir}/services/autoreplace.desktop
 %{_datadir}/services/kopete_autoreplace.desktop
 %{_datadir}/apps/kopete/icons/*/*/*/autoreplace.png
 
@@ -550,7 +448,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete*history*.so
 %{_libdir}/kde3/kopete*history*.la
 %{_datadir}/services/kopete_history.desktop
-#%%{_datadir}/apps/kopete/icons/hicolor/*/*/history.png
 %dir %{_datadir}/apps/kopete_history
 %{_datadir}/apps/kopete_history/*
 %{_datadir}/config.kcfg/historyconfig.kcfg
@@ -562,29 +459,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/services/kopete_highlight.desktop
 %{_datadir}/apps/kopete/icons/*/*/*/highlight.png
 
-#%%files plugin-tools-importer
-#%%defattr(644,root,root,755)
-#%%attr(755,root,root) %{_libdir}/kde3/kopete*importer*.so*
-#%%{_libdir}/kde3/kopete*importer*.la
-#%{_datadir}/apps/kopete/importer.desktop
-
 %files plugin-tools-nowlistening
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kopete*nowlistening*.so
 %{_libdir}/kde3/kopete*nowlistening*.la
 %{_datadir}/services/kopete_nowlistening.desktop
-
-%files plugin-tools-motionaway
-%defattr(644,root,root,755)
-#%attr(755,root,root) %{_libdir}/kde3/kopete*motionaway*.so
-#%{_libdir}/kde3/kopete*motionaway*.la
-#%{_datadir}/services/motionaway.desktop
-
-%files plugin-tools-spellcheck
-%defattr(644,root,root,755)
-#%attr(755,root,root) %{_libdir}/kde3/kopete*spellcheck*.so
-#%{_libdir}/kde3/kopete*spellcheck*.la
-#%{_datadir}/services/spellcheck.desktop
 
 %files plugin-tools-texteffect
 %defattr(644,root,root,755)
@@ -625,7 +504,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/services/kopete_gadu.desktop
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/gg*
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/gadu*
-#%{_datadir}/apps/kopete/pics/gg*
 
 %files plugin-protocols-icq
 %defattr(644,root,root,755)
@@ -634,7 +512,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/services/kopete_icq.desktop
 %{_datadir}/apps/kopete/icons/hicolor/*/*/icq*
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/icq*
-#%{_datadir}/apps/kopete/pics/icq*
 %{_datadir}/mimelnk/application/x-icq.desktop
 
 %files plugin-protocols-irc
@@ -643,7 +520,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde3/kopete*irc*.la
 %{_datadir}/services/irc.protocol
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/irc*
-#%{_datadir}/apps/kopete/pics/irc_connecting.mng
 %{_datadir}/services/kopete_irc.desktop
 %{_datadir}/apps/kopete/ircnetworks.xml
 
@@ -652,7 +528,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete*jabber*.so
 %{_libdir}/kde3/kopete*jabber*.la
 %{_datadir}/services/kopete_jabber.desktop
-#%{_datadir}/apps/kopete/pics/jabber*
 %{_datadir}/apps/kopete/icons/hicolor/*/*/jabber*
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/jabber*
 
@@ -661,16 +536,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete*msn*.so
 %{_libdir}/kde3/kopete*msn*.la
 %{_datadir}/services/kopete_msn.desktop
-#%{_datadir}/apps/kopete/pics/msn*
 %{_datadir}/apps/kopete/icons/*/*/*/msn*
 %dir %{_datadir}/apps/kopete_msn
 %{_datadir}/apps/kopete_msn/*
-
-%files plugin-protocols-oscar
-%defattr(644,root,root,755)
-#%%attr(755,root,root) %{_libdir}/kde3/kopete*oscar*.*
-#%{_datadir}/apps/kopete/oscar.desktop
-#%%%{_datadir}/apps/kopete/pics/oscar*
 
 %files plugin-protocols-sms
 %defattr(644,root,root,755)
@@ -685,14 +553,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde3/kopete_yahoo*.la
 %{_datadir}/services/kopete_yahoo.desktop
 %{_datadir}/apps/kopete/icons/*/*/*/yahoo*
-
-%files plugin-protocols-winpopup
-%defattr(644,root,root,755)
-#%attr(755,root,root) %{_bindir}/winpopup*.sh
-#%attr(755,root,root) %{_libdir}/kde3/kopete*wp*.so
-#%{_libdir}/kde3/kopete*wp*.la
-#%{_datadir}/services/wp.desktop
-#%{_datadir}/apps/kopete/icons/hicolor/*/*/wp*
 
 %files plugin-protocols-groupwise
 %defattr(644,root,root,755)
