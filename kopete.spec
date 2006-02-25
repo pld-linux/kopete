@@ -1,8 +1,11 @@
+#
+# Conditional build:
 %bcond_without	xmms
 %bcond_without	noatun
 %bcond_without	meanwhile
 %bcond_without	smpppd
 %bcond_without	winpopup
+#
 %define		_snap	alpha1
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
@@ -12,34 +15,43 @@ Release:	0.%{_snap}.1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/sourceforge/kopete/%{name}-%{version}-%{_snap}.tar.bz2
+Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}-%{_snap}.tar.bz2
 # Source0-md5:	d478259d8be070b1e2d7ce728dfa7269
-#Patch0:		%{name}-includehints.patch
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fam-devel
-#BuildRequires:	libpsi-devel >= 20021108
-BuildRequires:	libgadu-devel >= 1.0
-BuildRequires:	libxml2-devel >= 2.4.8
-BuildRequires:	libxslt-devel >= 1.0.7
+BuildRequires:	glib-devel
 BuildRequires:	kdemultimedia-devel >= 3.1
 BuildRequires:	kdemultimedia-kscd >= 3.1
 %{?with_noatun:BuildRequires:	kdemultimedia-noatun >= 3.1}
+BuildRequires:	libgadu-devel >= 1.0
+BuildRequires:	libgsm-devel
+#BuildRequires:	libpsi-devel >= 20021108
+BuildRequires:	libxml2-devel >= 2.4.8
+BuildRequires:	libxslt-devel >= 1.0.7
+%{?with_meanwhile:BuildRequires:	meanwhile-devel}
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	qt-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	glib-devel
-BuildRequires:	libgsm-devel
-%{?with_meanwhile:BuildRequires:	meanwhile-devel}
 %{?with_xmms:BuildRequires:	xmms-devel >= 1.0.0}
+Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
 Requires:	kdebase-core >= 3.5.
 Requires:	perl-modules
 Requires:	qt >= 3.1
-Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
-Obsoletes:	kopete-plugin-tools-autoaway
 Obsoletes:	kdenetwork-kopete
+Obsoletes:	kdenetwork-kopete-protocol-testbed
+Obsoletes:	kopete-plugin-protocols-aim
+Obsoletes:	kopete-plugin-protocols-gg
+Obsoletes:	kopete-plugin-protocols-icq
+Obsoletes:	kopete-plugin-protocols-irc
+Obsoletes:	kopete-plugin-protocols-jabber
+Obsoletes:	kopete-plugin-protocols-msn
+Obsoletes:	kopete-plugin-protocols-oscar
+Obsoletes:	kopete-plugin-protocols-sms
+Obsoletes:	kopete-plugin-protocols-winpopup
+Obsoletes:	kopete-plugin-protocols-yahoo
 Obsoletes:	kopete-plugin-tools-autoaway
 Obsoletes:	kopete-plugin-tools-autoreplace
 Obsoletes:	kopete-plugin-tools-conectionstatus
@@ -54,17 +66,6 @@ Obsoletes:	kopete-plugin-tools-spellcheck
 Obsoletes:	kopete-plugin-tools-texteffect
 Obsoletes:	kopete-plugin-tools-translator
 Obsoletes:	kopete-plugin-tools-webpresence
-Obsoletes:	kopete-plugin-protocols-aim
-Obsoletes:	kopete-plugin-protocols-gg
-Obsoletes:	kopete-plugin-protocols-icq
-Obsoletes:	kopete-plugin-protocols-irc
-Obsoletes:	kopete-plugin-protocols-jabber
-Obsoletes:	kopete-plugin-protocols-msn
-Obsoletes:	kopete-plugin-protocols-oscar
-Obsoletes:	kopete-plugin-protocols-sms
-Obsoletes:	kopete-plugin-protocols-winpopup
-Obsoletes:	kopete-plugin-protocols-yahoo
-Obsoletes:	kdenetwork-kopete-protocol-testbed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -569,7 +570,6 @@ przez AIM i ICQ.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_snap}
-#patch -p1
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
@@ -581,7 +581,7 @@ kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 	--%{?debug:en}%{!?debug:dis}able-debug \
 	--%{?with_smpppd:en}%{!?with_smpppd:dis}able-sametime-plugin \
 	--with-distribution="PLD Linux Distribution" \
-	--with-qt-libraries=%{_libdir}\
+	--with-qt-libraries=%{_libdir} \
 	--disable-testbed \
 	%{!?debug:--disable-rpath} \
 	--%{?with_smpppd:en}%{!?with_smpppd:dis}able-smpppd
@@ -597,11 +597,11 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 %if %{with winpopup}
-%{__make} -C kopete/protocols/winpopup \
-	install DESTDIR=$RPM_BUILD_ROOT
+%{__make} -C kopete/protocols/winpopup install \
+	DESTDIR=$RPM_BUILD_ROOT
 %endif
 
-echo "Categories=Qt;Network;X-Communication" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kopete.desktop
+echo "Categories=Qt;Network;X-Communication;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kopete.desktop
 install -d $RPM_BUILD_ROOT%{_iconsdir}
 
 %find_lang %{name} --with-kde
@@ -908,7 +908,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/services/kopete_cryptography.desktop
 %{_datadir}/services/kconfiguredialog/kopete_cryptography_config.desktop
 
-
 %files tool-latex
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kopete_latexconvert.sh
@@ -922,7 +921,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/services/kconfiguredialog/kopete_addbookmarks_config.desktop
 %{_datadir}/services/kconfiguredialog/kopete_latex_config.desktop
 %{_datadir}/services/kopete_latex.desktop
-
 
 %files tool-highlight
 %defattr(644,root,root,755)
