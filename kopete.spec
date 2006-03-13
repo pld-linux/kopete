@@ -1,5 +1,6 @@
 # TODO:
 # - subpackage linphone's oRTP libraries to add Jingle support for jabber
+#
 # Conditional build:
 %bcond_without	xmms
 %bcond_without	noatun
@@ -121,7 +122,6 @@ This package contains plugins for Qt Designer.
 
 %description designer -l pl
 Pakiet ten zawiera wtyczki do Qt Designera.
-
 
 %package tool-alias
 Summary:	Kopete plugin to add custom aliases for commands
@@ -744,6 +744,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/kopete
 
 %files designer
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/plugins/designer/libkopetewidgets.so
 %{_libdir}/kde3/plugins/designer/libkopetewidgets.la
 
