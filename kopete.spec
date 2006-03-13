@@ -1,4 +1,5 @@
-#
+# TODO:
+# - subpackage linphone's oRTP libraries to add Jingle support for jabber
 # Conditional build:
 %bcond_without	xmms
 %bcond_without	noatun
@@ -6,7 +7,7 @@
 %bcond_without	smpppd
 %bcond_without	winpopup
 #
-%define		_snap	alpha1
+%define		_snap	beta1
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
@@ -16,7 +17,7 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}-%{_snap}.tar.bz2
-# Source0-md5:	d478259d8be070b1e2d7ce728dfa7269
+# Source0-md5:	7632564cfb90fa2aaa3abd4282250799
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -107,6 +108,20 @@ This package contains header files for kopete.
 %description devel -l pl
 Pakiet ten zawiera pliki nag³ówkowe potrzebn± przy pisaniu w³asnych
 programów wykorzystuj±cych kopete.
+
+%package designer
+Summary:	kopete - Qt Designer plugins
+Summary(pl):	kopete - wtyczki do Qt Designera
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	qt-designer
+
+%description designer
+This package contains plugins for Qt Designer.
+
+%description designer -l pl
+Pakiet ten zawiera wtyczki do Qt Designera.
+
 
 %package tool-alias
 Summary:	Kopete plugin to add custom aliases for commands
@@ -727,6 +742,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkopete_oscar.so
 %attr(755,root,root) %{_libdir}/libkopete_videodevice.so
 %{_includedir}/kopete
+
+%files designer
+%attr(755,root,root) %{_libdir}/kde3/plugins/designer/libkopetewidgets.so
+%{_libdir}/kde3/plugins/designer/libkopetewidgets.la
 
 %files protocol-aim
 %defattr(644,root,root,755)
