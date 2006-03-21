@@ -8,7 +8,7 @@
 %bcond_without	smpppd
 %bcond_without	winpopup
 #
-%define		_snap	beta1
+%define		_snap	beta2
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
@@ -18,7 +18,7 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}-%{_snap}.tar.bz2
-# Source0-md5:	7632564cfb90fa2aaa3abd4282250799
+# Source0-md5:	142cd8ddc4dbd5f493e03b80f36ad7ca
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -59,11 +59,11 @@ Obsoletes:	kopete-plugin-tools-autoreplace
 Obsoletes:	kopete-plugin-tools-conectionstatus
 Obsoletes:	kopete-plugin-tools-contactnotes
 Obsoletes:	kopete-plugin-tools-cryptography
-Obsoletes:	kopete-plugin-tools-history
 Obsoletes:	kopete-plugin-tools-highlight
+Obsoletes:	kopete-plugin-tools-history
 Obsoletes:	kopete-plugin-tools-importer
-Obsoletes:	kopete-plugin-tools-nowlistening
 Obsoletes:	kopete-plugin-tools-motionaway
+Obsoletes:	kopete-plugin-tools-nowlistening
 Obsoletes:	kopete-plugin-tools-spellcheck
 Obsoletes:	kopete-plugin-tools-texteffect
 Obsoletes:	kopete-plugin-tools-translator
@@ -72,15 +72,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Kopete is a flexible and extendable multiple protocol instant
-messaging system designed as a based system. All protocols are
-plugins and allow modular installment, configuration, and usage
-without the main application knowing anything about the plugin being
-loaded. The goal of Kopete is to provide users with a standard and
-easy to use interface between all of their instant messaging systems,
-but at the same time also providing developers with the ease of
-writing plugins to support a new protocol. The core Kopete development
-team provides a handful of plugins that most users can use, in
-addition to templates for new developers to base a plugin off of.
+messaging system designed as a based system. All protocols are plugins
+and allow modular installment, configuration, and usage without the
+main application knowing anything about the plugin being loaded. The
+goal of Kopete is to provide users with a standard and easy to use
+interface between all of their instant messaging systems, but at the
+same time also providing developers with the ease of writing plugins
+to support a new protocol. The core Kopete development team provides a
+handful of plugins that most users can use, in addition to templates
+for new developers to base a plugin off of.
 
 %description -l pl
 Kopete to rozszerzalny i rozbudowywalny komunikator obs³uguj±cy wiele
