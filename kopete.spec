@@ -5,7 +5,7 @@
 %bcond_without	xmms
 %bcond_without	noatun
 %bcond_with	meanwhile
-%bcond_without	smpppd
+%bcond_without	smpppd # support for the SuSE Meta PPP Daemon (smpppd)
 %bcond_without	winpopup
 %bcond_without	sms # partial BR!!
 #
@@ -14,7 +14,7 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.12
-Release:	0.%{_snap}.1
+Release:	0.%{_snap}.2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -724,6 +724,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/actions/newmessage.mng
 %{_iconsdir}/*/*/actions/newmsg.png
 %{_iconsdir}/*/*/actions/status_unknown.png
+%{_iconsdir}/*/*/actions/status_unknown_overlay.png
 %{_iconsdir}/crystalsvg/*/*/metacontact_away.png
 %{_iconsdir}/crystalsvg/*/*/metacontact_offline.png
 %{_iconsdir}/crystalsvg/*/*/metacontact_online.png
@@ -1027,9 +1028,10 @@ rm -rf $RPM_BUILD_ROOT
 #%%attr(755,root,root) %{_libdir}/kde3/kopete*spellcheck*.so
 #%%{_datadir}/services/spellcheck.desktop
 
-%if %{with smpppdcs}
+%if %{with smpppd}
 %files tool-smpppdcs
 %defattr(644,root,root,755)
+%{_datadir}/config.kcfg/smpppdcs.kcfg
 %{_libdir}/kde3/kcm_kopete_smpppdcs.la
 %attr(755,root,root) %{_libdir}/kde3/kcm_kopete_smpppdcs.so
 %{_libdir}/kde3/kopete*smpppdcs*.la
