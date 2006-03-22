@@ -4,7 +4,7 @@
 # Conditional build:
 %bcond_without	xmms
 %bcond_without	noatun
-%bcond_without	meanwhile # partial BR!!
+%bcond_with	meanwhile
 %bcond_without	smpppd
 %bcond_without	winpopup
 %bcond_without	sms # partial BR!!
@@ -33,7 +33,8 @@ BuildRequires:	libgsm-devel
 #BuildRequires:	libpsi-devel >= 20021108
 BuildRequires:	libxml2-devel >= 2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
-%{?with_meanwhile:BuildRequires:	meanwhile-devel}
+%{?with_meanwhile:BuildRequires:	meanwhile-devel >= 1.0.1}
+%{?with_meanwhile:BuildRequires:	meanwhile-devel <= 1.1.0}
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	qt-devel >= 3.1
