@@ -627,11 +627,11 @@ kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 
 %configure \
 	--%{?debug:en}%{!?debug:dis}able-debug \
-	--%{?with_smpppd:en}%{!?with_smpppd:dis}able-sametime-plugin \
 	--with-distribution="PLD Linux Distribution" \
 	--with-qt-libraries=%{_libdir} \
 	--disable-testbed \
 	%{!?debug:--disable-rpath} \
+	--%{?with_meanwhile:en}%{!?with_meanwhile:dis}able-meanwhile \
 	--%{?with_smpppd:en}%{!?with_smpppd:dis}able-smpppd
 
 %{__make} \
