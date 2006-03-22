@@ -4,17 +4,19 @@
 # Conditional build:
 %bcond_without	xmms
 %bcond_without	noatun
-%bcond_with	meanwhile
-%bcond_without	smpppd # support for the SuSE Meta PPP Daemon (smpppd)
+%bcond_with	meanwhile	# Kopete Meanwhile plugin (Lotus Sametime support)
+%bcond_without	smpppd		# support for the SuSE Meta PPP Daemon (smpppd)
 %bcond_without	winpopup
-%bcond_without	sms # partial BR!!
+%bcond_without	smsgsm			# GSM SMS protocol
+%bcond_without	slp			# don't require libslp (Browsing in krfb and krdc not possible)
+%bcond_with		jingle		# enable Jabber Jingle voice support
 #
 %define		_snap	beta2
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.12
-Release:	0.%{_snap}.2
+Release:	0.%{_snap}.4
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -29,12 +31,12 @@ BuildRequires:	kdemultimedia-devel >= 3.1
 BuildRequires:	kdemultimedia-kscd >= 3.1
 %{?with_noatun:BuildRequires:	kdemultimedia-noatun >= 3.1}
 BuildRequires:	libgadu-devel >= 1.0
-BuildRequires:	libgsm-devel
+%{?with_smsgsm:BuildRequires:	gsmlib-devel}
 #BuildRequires:	libpsi-devel >= 20021108
 BuildRequires:	libxml2-devel >= 2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
-%{?with_meanwhile:BuildRequires:	meanwhile-devel >= 1.0.1}
 %{?with_meanwhile:BuildRequires:	meanwhile-devel <= 1.1.0}
+%{?with_meanwhile:BuildRequires:	meanwhile-devel >= 1.0.1}
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	qt-devel >= 3.1
@@ -632,7 +634,10 @@ kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 	--disable-testbed \
 	%{!?debug:--disable-rpath} \
 	--%{?with_meanwhile:en}%{!?with_meanwhile:dis}able-meanwhile \
-	--%{?with_smpppd:en}%{!?with_smpppd:dis}able-smpppd
+	--%{?with_smpppd:en}%{!?with_smpppd:dis}able-smpppd \
+	--%{?with_jingle:en}%{!?with_jingle:dis}able-jingle \
+	--%{?with_smsgsm:en}%{!?with_smsgsm:dis}able-smsgsm \
+	--%{?with_slp:en}%{!?with_slp:dis}able-slp \
 
 %{__make} \
 	CXXLD=%{_host_cpu}-%{_vendor}-%{_os}-g++ \
@@ -657,6 +662,9 @@ echo "Categories=Qt;Network;X-Communication;" >> $RPM_BUILD_ROOT%{_desktopdir}/k
 install -d $RPM_BUILD_ROOT%{_iconsdir}
 
 %find_lang %{name} --with-kde
+
+# in kdelibs
+rm -f $RPM_BUILD_ROOT%{_datadir}/mimelnk/application/x-icq.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -881,7 +889,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kopete_skype
 %endif
 
-%if %{with sms}
+%if %{with smsgsm}
 %files protocol-sms
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kopete*sms*.la
