@@ -16,22 +16,23 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.12
-Release:	0.%{_snap}.4
+Release:	0.%{_snap}.6
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}-%{_snap}.tar.bz2
 # Source0-md5:	142cd8ddc4dbd5f493e03b80f36ad7ca
+Patch0:		%{name}-desktop.patch
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fam-devel
 BuildRequires:	glib-devel
+%{?with_smsgsm:BuildRequires:	gsmlib-devel}
 BuildRequires:	kdemultimedia-devel >= 3.1
 BuildRequires:	kdemultimedia-kscd >= 3.1
 %{?with_noatun:BuildRequires:	kdemultimedia-noatun >= 3.1}
 BuildRequires:	libgadu-devel >= 1.0
-%{?with_smsgsm:BuildRequires:	gsmlib-devel}
 #BuildRequires:	libpsi-devel >= 20021108
 BuildRequires:	libxml2-devel >= 2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
@@ -620,13 +621,12 @@ przez AIM i ICQ.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_snap}
+%patch0 -p1
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
-
 %{__make} -f admin/Makefile.common cvs
-
 %configure \
 	--%{?debug:en}%{!?debug:dis}able-debug \
 	--with-distribution="PLD Linux Distribution" \
@@ -657,9 +657,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C kopete/protocols/winpopup install \
 	DESTDIR=$RPM_BUILD_ROOT
 %endif
-
-echo "Categories=Qt;Network;X-Communication;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kopete.desktop
-install -d $RPM_BUILD_ROOT%{_iconsdir}
 
 %find_lang %{name} --with-kde
 
