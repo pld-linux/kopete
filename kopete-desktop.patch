@@ -1,0 +1,11 @@
+--- kopete-0.12-beta2/kopete/kopete/kopete.desktop~	2006-03-21 04:19:20.000000000 +0200
++++ kopete-0.12-beta2/kopete/kopete/kopete.desktop	2006-03-23 18:12:28.000000000 +0200
+@@ -93,7 +93,7 @@
+ DocPath=kopete/index.html
+ Terminal=false
+ Icon=kopete
+-Categories=Qt;KDE;Network;
++Categories=Qt;KDE;Network;InstantMessaging;
+ X-DCOP-ServiceType=Unique
+ X-DCOP-ServiceName=kopete
+ ServiceTypes=DCOP/InstantMessenger
