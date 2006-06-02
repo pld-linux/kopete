@@ -11,17 +11,16 @@
 %bcond_without	slp			# don't require libslp (Browsing in krfb and krdc not possible)
 %bcond_with		jingle		# enable Jabber Jingle voice support
 #
-%define		_snap	beta2
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
-Version:	0.12
-Release:	0.%{_snap}.6
+Version:	0.12.0
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}-%{_snap}.tar.bz2
-# Source0-md5:	142cd8ddc4dbd5f493e03b80f36ad7ca
+Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}.tar.bz2
+# Source0-md5:	6cb9457260da613d6bbb404cb71c7847
 Patch0:		%{name}-desktop.patch
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
@@ -620,7 +619,7 @@ Biblioteka dodaj±ca obs³ugê protoko³u OSCAR, u¿ywanego miêdzy innymi
 przez AIM i ICQ.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_snap}
+%setup -q
 %patch0 -p1
 
 %build
