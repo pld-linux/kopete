@@ -15,7 +15,7 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.12.0
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -25,6 +25,7 @@ Patch0:		%{name}-desktop.patch
 # http://www.kde-apps.org/content/show.php?content=40844
 Patch1:		%{name}-crypt.patch
 Patch2:		%{name}-icq_servers.patch
+Patch3:		%{name}-icq_autodisconnect-fix.patch
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -626,6 +627,7 @@ przez AIM i ICQ.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p0
+%patch3 -p0
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
