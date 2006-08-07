@@ -15,7 +15,7 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.12.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -611,6 +611,7 @@ Summary:	Shared library which adds OSCAR protocol support
 Summary(pl):	Biblioteka dodaj±ca obs³ugê protoko³u OSCAR
 Group:		X11/Applications/Networking
 Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
+Provides:	kdenetwork-libkopete_oscar
 Obsoletes:	kdenetwork-libkopete_oscar
 
 %description libkopete_oscar
