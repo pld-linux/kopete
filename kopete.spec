@@ -15,7 +15,7 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.12.2
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -24,7 +24,6 @@ Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-desktop.patch
 # http://www.kde-apps.org/content/show.php?content=40844
 Patch1:		%{name}-crypt.patch
-#Patch2:		%{name}-icqversion.patch
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -117,19 +116,6 @@ This package contains header files for kopete.
 %description devel -l pl
 Pakiet ten zawiera pliki nag³ówkowe potrzebn± przy pisaniu w³asnych
 programów wykorzystuj±cych kopete.
-
-#%package designer
-#Summary:	kopete - Qt Designer plugins
-#Summary(pl):	kopete - wtyczki do Qt Designera
-#Group:		X11/Development/Libraries
-#Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
-#Requires:	qt-designer
-#
-#%description designer
-#This package contains plugins for Qt Designer.
-#
-#%description designer -l pl
-#Pakiet ten zawiera wtyczki do Qt Designera.
 
 %package tool-alias
 Summary:	Kopete plugin to add custom aliases for commands
@@ -314,8 +300,6 @@ Summary:	Playlist informer for Kopete
 Summary(pl):	Informator o playli¶cie dla Kopete
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-#Requires:	kdemultimedia-kscd >= 3.1
-#Requires:	kdemultimedia-noatun >= 3.1
 %if %{with xmms}
 Requires:	xmms >= 1.0.0
 %endif
@@ -626,7 +610,6 @@ przez AIM i ICQ.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-#%patch2 -p0
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
@@ -779,8 +762,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/crystalsvg/*/actions/contact_xa_overlay.png
 %{_iconsdir}/*/*/actions/kopeteeditstatusmessage.png
 %{_iconsdir}/*/*/actions/kopetestatusmessage.png
-# New one
-#%{_datadir}/services/invitation.protocol
 %{_datadir}/services/kopete_identityconfig.desktop
 
 %files devel
@@ -790,11 +771,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkopete_oscar.so
 %attr(755,root,root) %{_libdir}/libkopete_videodevice.so
 %{_includedir}/kopete
-
-#%files designer
-#%defattr(644,root,root,755)
-#%attr(755,root,root) %{_libdir}/kde3/plugins/designer/libkopetewidgets.so
-#%{_libdir}/kde3/plugins/designer/libkopetewidgets.la
 
 %files protocol-aim
 %defattr(644,root,root,755)
@@ -827,8 +803,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete*icq*.so
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/*icq*
 %{_datadir}/apps/kopete/icons/hicolor/*/*/*icq*
-# moved to kdelibs; used also by sim
-# %%{_datadir}/mimelnk/application/x-icq.desktop
 %{_datadir}/services/kopete_icq.desktop
 
 %files protocol-irc
@@ -839,7 +813,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/irc*
 %{_datadir}/services/kopete_irc.desktop
 %{_datadir}/services/irc.protocol
-#%%{_datadir}/apps/kopete/pics/irc_connecting.mng
 
 %files protocol-jabber
 %defattr(644,root,root,755)
@@ -900,23 +873,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/services/kopete_sms.desktop
 %endif
 
-#%files protocol-testbed
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kopete_testbed.la
-#%attr(755,root,root) %{_libdir}/kde3/kopete_testbed.so
-#%{_datadir}/apps/kopete/icons/crystalsvg/*/*/testbed*
-#%{_datadir}/services/kopete_testbed.desktop
-
 %if %{with winpopup}
 %files protocol-winpopup
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/winpopup*.sh
-#%{_libdir}/kde3/kcm_kopete_wp.la
-#%attr(755,root,root) %{_libdir}/kde3/kcm_kopete_wp.so
 %{_libdir}/kde3/kopete*wp*.la
 %attr(755,root,root) %{_libdir}/kde3/kopete*wp*.so
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/wp*
-#%{_datadir}/services/kconfiguredialog/kopete_wp_config.desktop
 %{_datadir}/services/kopete_wp.desktop
 %endif
 
@@ -1013,15 +976,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/services/kopete_history.desktop
 %{_datadir}/services/kconfiguredialog/kopete_history_config.desktop
 
-#%files tool-motionaway
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kcm_kopete_motionaway.la
-#%attr(755,root,root) %{_libdir}/kde3/kcm_kopete_motionaway.so
-#%{_libdir}/kde3/kopete*motionaway*.la
-#%attr(755,root,root) %{_libdir}/kde3/kopete*motionaway*.so
-#%{_datadir}/services/kconfiguredialog/kopete_motionaway_config.desktop
-#%{_datadir}/services/motionaway.desktop
-
 %files tool-nowlistening
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kcm_kopete_nowlistening.la
@@ -1031,12 +985,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config.kcfg/nowlisteningconfig.kcfg
 %{_datadir}/services/kconfiguredialog/kopete_nowlistening_config.desktop
 %{_datadir}/services/kopete_nowlistening.desktop
-
-#%%files tool-spellcheck
-#%%defattr(644,root,root,755)
-#%%{_libdir}/kde3/kopete*spellcheck*.la
-#%%attr(755,root,root) %{_libdir}/kde3/kopete*spellcheck*.so
-#%%{_datadir}/services/spellcheck.desktop
 
 %if %{with smpppd}
 %files tool-smpppdcs
