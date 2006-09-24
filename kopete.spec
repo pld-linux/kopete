@@ -14,17 +14,17 @@
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
-Version:	0.12.1
-Release:	3
+Version:	0.12.2
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}.tar.bz2
-# Source0-md5:	b646f2f45fc0fbcd56ada5078fb540fb
+# Source0-md5:	1526f3c44ee2b2ed3ee4a236893c9f46
 Patch0:		%{name}-desktop.patch
 # http://www.kde-apps.org/content/show.php?content=40844
 Patch1:		%{name}-crypt.patch
-Patch2:		%{name}-icqversion.patch
+#Patch2:		%{name}-icqversion.patch
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -118,18 +118,18 @@ This package contains header files for kopete.
 Pakiet ten zawiera pliki nag³ówkowe potrzebn± przy pisaniu w³asnych
 programów wykorzystuj±cych kopete.
 
-%package designer
-Summary:	kopete - Qt Designer plugins
-Summary(pl):	kopete - wtyczki do Qt Designera
-Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
-Requires:	qt-designer
-
-%description designer
-This package contains plugins for Qt Designer.
-
-%description designer -l pl
-Pakiet ten zawiera wtyczki do Qt Designera.
+#%package designer
+#Summary:	kopete - Qt Designer plugins
+#Summary(pl):	kopete - wtyczki do Qt Designera
+#Group:		X11/Development/Libraries
+#Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+#Requires:	qt-designer
+#
+#%description designer
+#This package contains plugins for Qt Designer.
+#
+#%description designer -l pl
+#Pakiet ten zawiera wtyczki do Qt Designera.
 
 %package tool-alias
 Summary:	Kopete plugin to add custom aliases for commands
@@ -626,7 +626,7 @@ przez AIM i ICQ.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p0
+#%patch2 -p0
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
@@ -791,10 +791,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkopete_videodevice.so
 %{_includedir}/kopete
 
-%files designer
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/kde3/plugins/designer/libkopetewidgets.so
-%{_libdir}/kde3/plugins/designer/libkopetewidgets.la
+#%files designer
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_libdir}/kde3/plugins/designer/libkopetewidgets.so
+#%{_libdir}/kde3/plugins/designer/libkopetewidgets.la
 
 %files protocol-aim
 %defattr(644,root,root,755)
