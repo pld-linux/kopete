@@ -685,6 +685,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-account-kconf_update
 %attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-nameTracking-kconf_update
 %attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-pluginloader2-kconf_update
+%attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-account-0.10.pl
+%attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-account-kconf_update.sh
+%attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-jabberpriorityaddition-kconf_update.sh
+%attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-jabberproxytype-kconf_update.sh
+%attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-pluginloader.pl
+%attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-pluginloader2.sh
 %dir %{_datadir}/apps/kopete
 %dir %{_datadir}/apps/kopete/icons
 %dir %{_datadir}/apps/kopete/icons/crystalsvg
@@ -692,17 +698,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/apps/kopete/icons/crystalsvg/*/*
 %dir %{_datadir}/apps/kopete/pics
 %dir %{_datadir}/apps/kopeterichtexteditpart
-%{_datadir}/apps/kconf_update/kopete-account-0.10.pl
-%{_datadir}/apps/kconf_update/kopete-account-kconf_update.sh
 %{_datadir}/apps/kconf_update/kopete-account-kconf_update.upd
-%{_datadir}/apps/kconf_update/kopete-jabberpriorityaddition-kconf_update.sh
 %{_datadir}/apps/kconf_update/kopete-jabberpriorityaddition-kconf_update.upd
-%{_datadir}/apps/kconf_update/kopete-jabberproxytype-kconf_update.sh
 %{_datadir}/apps/kconf_update/kopete-jabberproxytype-kconf_update.upd
 %{_datadir}/apps/kconf_update/kopete-nameTracking.upd
-%{_datadir}/apps/kconf_update/kopete-pluginloader.pl
 %{_datadir}/apps/kconf_update/kopete-pluginloader.upd
-%{_datadir}/apps/kconf_update/kopete-pluginloader2.sh
 %{_datadir}/apps/kconf_update/kopete-pluginloader2.upd
 %{_datadir}/apps/kopete/*rc
 %{_datadir}/apps/kopete/icons/*/*/actions/kgpg_key?.png
