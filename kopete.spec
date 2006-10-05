@@ -659,9 +659,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f kopete.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-account-kconf_update
-%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-nameTracking-kconf_update
-%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-pluginloader2-kconf_update
 %attr(755,root,root) %{_bindir}/kopete
 %{_libdir}/kde3/kcm_kopete_addbookmarks.la
 %attr(755,root,root) %{_libdir}/kde3/kcm_kopete_addbookmarks.so
@@ -685,6 +682,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete_statistics.so
 %{_libdir}/kde3/libkrichtexteditpart.la
 %attr(755,root,root) %{_libdir}/kde3/libkrichtexteditpart.so
+%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-account-kconf_update
+%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-nameTracking-kconf_update
+%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-pluginloader2-kconf_update
+%dir %{_datadir}/apps/kopete
+%dir %{_datadir}/apps/kopete/icons
+%dir %{_datadir}/apps/kopete/icons/crystalsvg
+%dir %{_datadir}/apps/kopete/icons/crystalsvg/*
+%dir %{_datadir}/apps/kopete/icons/crystalsvg/*/*
+%dir %{_datadir}/apps/kopete/pics
+%dir %{_datadir}/apps/kopeterichtexteditpart
 %{_datadir}/apps/kconf_update/kopete-account-0.10.pl
 %{_datadir}/apps/kconf_update/kopete-account-kconf_update.sh
 %{_datadir}/apps/kconf_update/kopete-account-kconf_update.upd
@@ -693,49 +700,27 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kconf_update/kopete-jabberproxytype-kconf_update.sh
 %{_datadir}/apps/kconf_update/kopete-jabberproxytype-kconf_update.upd
 %{_datadir}/apps/kconf_update/kopete-nameTracking.upd
-%{_datadir}/apps/kconf_update/kopete-pluginloader2.sh
-%{_datadir}/apps/kconf_update/kopete-pluginloader2.upd
 %{_datadir}/apps/kconf_update/kopete-pluginloader.pl
 %{_datadir}/apps/kconf_update/kopete-pluginloader.upd
-%dir %{_datadir}/apps/kopete
+%{_datadir}/apps/kconf_update/kopete-pluginloader2.sh
+%{_datadir}/apps/kconf_update/kopete-pluginloader2.upd
 %{_datadir}/apps/kopete/*rc
-%dir %{_datadir}/apps/kopete/icons
-%dir %{_datadir}/apps/kopete/icons/crystalsvg
-%dir %{_datadir}/apps/kopete/icons/crystalsvg/*
-%dir %{_datadir}/apps/kopete/icons/crystalsvg/*/*
-%{_iconsdir}/*/*/actions/*_user.png
-%{_iconsdir}/*/*/actions/voicecall.png
-%{_iconsdir}/*/*/actions/webcam*.png
-%{_iconsdir}/*/*/actions/show_offliners.png
-%{_iconsdir}/*/*/actions/account_offline_overlay.png
-%{_iconsdir}/*/*/actions/account_offline_overlay.svgz
-%{_iconsdir}/*/*/actions/emoticon.png
 %{_datadir}/apps/kopete/icons/*/*/actions/kgpg_key?.png
-%{_iconsdir}/*/*/actions/kopeteavailable.png
-%{_iconsdir}/*/*/actions/kopeteaway.png
 %{_datadir}/apps/kopete/icons/*/*/actions/logging.png
-%{_iconsdir}/*/*/actions/newmessage.mng
-%{_iconsdir}/*/*/actions/newmsg.png
-%{_iconsdir}/*/*/actions/status_unknown.png
-%{_iconsdir}/*/*/actions/status_unknown_overlay.png
-%{_iconsdir}/crystalsvg/*/*/metacontact_away.png
-%{_iconsdir}/crystalsvg/*/*/metacontact_offline.png
-%{_iconsdir}/crystalsvg/*/*/metacontact_online.png
-%{_iconsdir}/crystalsvg/*/*/metacontact_unknown.png
-%dir %{_datadir}/apps/kopete/pics
 %{_datadir}/apps/kopete/pics/statistics
 %{_datadir}/apps/kopete/styles
 %{_datadir}/apps/kopete_statistics
-%dir %{_datadir}/apps/kopeterichtexteditpart
 %{_datadir}/apps/kopeterichtexteditpart/kopeterichtexteditpartfull.rc
 %{_datadir}/config.kcfg/kopete.kcfg
 %{_datadir}/config.kcfg/kopeteidentityconfigpreferences.kcfg
+%{_datadir}/mimelnk/application/x-kopete-emoticons.desktop
 %{_datadir}/services/chatwindow.desktop
 %{_datadir}/services/emailwindow.desktop
 %{_datadir}/services/kopete_accountconfig.desktop
 %{_datadir}/services/kopete_addbookmarks.desktop
 %{_datadir}/services/kopete_appearanceconfig.desktop
 %{_datadir}/services/kopete_behaviorconfig.desktop
+%{_datadir}/services/kopete_identityconfig.desktop
 %{_datadir}/services/kopete_statistics.desktop
 %{_datadir}/servicetypes/kopeteplugin.desktop
 %{_datadir}/servicetypes/kopeteprotocol.desktop
@@ -745,24 +730,38 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/sounds/Kopete_Sent.ogg
 %{_datadir}/sounds/Kopete_User_is_Online.ogg
 %{_desktopdir}/kde/kopete.desktop
+%{_iconsdir}/*/*/actions/*_user.png
+%{_iconsdir}/*/*/actions/account_offline_overlay.png
+%{_iconsdir}/*/*/actions/account_offline_overlay.svgz
+%{_iconsdir}/*/*/actions/emoticon.png
+%{_iconsdir}/*/*/actions/kopeteavailable.png
+%{_iconsdir}/*/*/actions/kopeteaway.png
+%{_iconsdir}/*/*/actions/kopeteeditstatusmessage.png
+%{_iconsdir}/*/*/actions/kopetestatusmessage.png
+%{_iconsdir}/*/*/actions/newmessage.mng
+%{_iconsdir}/*/*/actions/newmsg.png
+%{_iconsdir}/*/*/actions/show_offliners.png
+%{_iconsdir}/*/*/actions/status_unknown.png
+%{_iconsdir}/*/*/actions/status_unknown_overlay.png
+%{_iconsdir}/*/*/actions/voicecall.png
+%{_iconsdir}/*/*/actions/webcam*.png
 %{_iconsdir}/*/*/apps/kopete.png
 %{_iconsdir}/*/*/apps/kopete2.svgz
-%{_iconsdir}/crystalsvg/*/apps/kopete_all_away.png
-%{_iconsdir}/crystalsvg/*/apps/kopete_offline.png
-%{_iconsdir}/crystalsvg/*/apps/kopete_some_away.png
-%{_iconsdir}/crystalsvg/*/apps/kopete_some_online.png
-%{_iconsdir}/crystalsvg/*/mimetypes/kopete_emoticons.png
-%{_datadir}/mimelnk/application/x-kopete-emoticons.desktop
-# New icons
+%{_iconsdir}/crystalsvg/*/*/metacontact_away.png
+%{_iconsdir}/crystalsvg/*/*/metacontact_offline.png
+%{_iconsdir}/crystalsvg/*/*/metacontact_online.png
+%{_iconsdir}/crystalsvg/*/*/metacontact_unknown.png
 %{_iconsdir}/crystalsvg/*/actions/contact_away_overlay.png
 %{_iconsdir}/crystalsvg/*/actions/contact_busy_overlay.png
 %{_iconsdir}/crystalsvg/*/actions/contact_food_overlay.png
 %{_iconsdir}/crystalsvg/*/actions/contact_invisible_overlay.png
 %{_iconsdir}/crystalsvg/*/actions/contact_phone_overlay.png
 %{_iconsdir}/crystalsvg/*/actions/contact_xa_overlay.png
-%{_iconsdir}/*/*/actions/kopeteeditstatusmessage.png
-%{_iconsdir}/*/*/actions/kopetestatusmessage.png
-%{_datadir}/services/kopete_identityconfig.desktop
+%{_iconsdir}/crystalsvg/*/apps/kopete_all_away.png
+%{_iconsdir}/crystalsvg/*/apps/kopete_offline.png
+%{_iconsdir}/crystalsvg/*/apps/kopete_some_away.png
+%{_iconsdir}/crystalsvg/*/apps/kopete_some_online.png
+%{_iconsdir}/crystalsvg/*/mimetypes/kopete_emoticons.png
 
 %files devel
 %defattr(644,root,root,755)
@@ -842,9 +841,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete*msn*.so
 %{_libdir}/kde3/kopete_netmeeting.la
 %attr(755,root,root) %{_libdir}/kde3/kopete_netmeeting.so
+%{_datadir}/apps/kopete/icons/crystalsvg/*/*/msn*
 %{_datadir}/apps/kopete_msn
 %{_datadir}/apps/kopete_netmeeting
-%{_datadir}/apps/kopete/icons/crystalsvg/*/*/msn*
 %{_datadir}/services/kconfiguredialog/kopete_msn_config.desktop
 %{_datadir}/services/kconfiguredialog/kopete_netmeeting_config.desktop
 %{_datadir}/services/kopete_msn.desktop
