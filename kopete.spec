@@ -682,20 +682,23 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kopete_statistics.so
 %{_libdir}/kde3/libkrichtexteditpart.la
 %attr(755,root,root) %{_libdir}/kde3/libkrichtexteditpart.so
-%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-account-kconf_update
-%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-nameTracking-kconf_update
-%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-pluginloader2-kconf_update
 %attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-account-0.10.pl
 %attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-account-kconf_update.sh
 %attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-jabberpriorityaddition-kconf_update.sh
 %attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-jabberproxytype-kconf_update.sh
 %attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-pluginloader.pl
 %attr(755,root,root) %{_datadir}/apps/kconf_update/kopete-pluginloader2.sh
+%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-account-kconf_update
+%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-nameTracking-kconf_update
+%attr(755,root,root) %{_libdir}/kconf_update_bin/kopete-pluginloader2-kconf_update
 %dir %{_datadir}/apps/kopete
 %dir %{_datadir}/apps/kopete/icons
 %dir %{_datadir}/apps/kopete/icons/crystalsvg
 %dir %{_datadir}/apps/kopete/icons/crystalsvg/*
 %dir %{_datadir}/apps/kopete/icons/crystalsvg/*/*
+%dir %{_datadir}/apps/kopete/icons/hicolor
+%dir %{_datadir}/apps/kopete/icons/hicolor/*
+%dir %{_datadir}/apps/kopete/icons/hicolor/*/*
 %dir %{_datadir}/apps/kopete/pics
 %dir %{_datadir}/apps/kopeterichtexteditpart
 %{_datadir}/apps/kconf_update/kopete-account-kconf_update.upd
@@ -716,6 +719,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/application/x-kopete-emoticons.desktop
 %{_datadir}/services/chatwindow.desktop
 %{_datadir}/services/emailwindow.desktop
+%{_datadir}/services/invitation.protocol
 %{_datadir}/services/kopete_accountconfig.desktop
 %{_datadir}/services/kopete_addbookmarks.desktop
 %{_datadir}/services/kopete_appearanceconfig.desktop
@@ -730,38 +734,40 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/sounds/Kopete_Sent.ogg
 %{_datadir}/sounds/Kopete_User_is_Online.ogg
 %{_desktopdir}/kde/kopete.desktop
-%{_iconsdir}/*/*/actions/*_user.png
 %{_iconsdir}/*/*/actions/account_offline_overlay.png
 %{_iconsdir}/*/*/actions/account_offline_overlay.svgz
+%{_iconsdir}/*/*/actions/contact_away_overlay.png
+%{_iconsdir}/*/*/actions/contact_busy_overlay.png
+%{_iconsdir}/*/*/actions/contact_food_overlay.png
+%{_iconsdir}/*/*/actions/contact_invisible_overlay.png
+%{_iconsdir}/*/*/actions/contact_phone_overlay.png
+%{_iconsdir}/*/*/actions/contact_xa_overlay.png
+%{_iconsdir}/*/*/actions/delete_user.png
+%{_iconsdir}/*/*/actions/edit_user.png
 %{_iconsdir}/*/*/actions/emoticon.png
 %{_iconsdir}/*/*/actions/kopeteavailable.png
 %{_iconsdir}/*/*/actions/kopeteaway.png
 %{_iconsdir}/*/*/actions/kopeteeditstatusmessage.png
 %{_iconsdir}/*/*/actions/kopetestatusmessage.png
+%{_iconsdir}/*/*/actions/metacontact_away.png
+%{_iconsdir}/*/*/actions/metacontact_offline.png
+%{_iconsdir}/*/*/actions/metacontact_online.png
+%{_iconsdir}/*/*/actions/metacontact_unknown.png
 %{_iconsdir}/*/*/actions/newmessage.mng
 %{_iconsdir}/*/*/actions/newmsg.png
 %{_iconsdir}/*/*/actions/show_offliners.png
 %{_iconsdir}/*/*/actions/status_unknown.png
 %{_iconsdir}/*/*/actions/status_unknown_overlay.png
 %{_iconsdir}/*/*/actions/voicecall.png
-%{_iconsdir}/*/*/actions/webcam*.png
+%{_iconsdir}/*/*/actions/webcamreceive.png
+%{_iconsdir}/*/*/actions/webcamsend.png
 %{_iconsdir}/*/*/apps/kopete.png
 %{_iconsdir}/*/*/apps/kopete2.svgz
-%{_iconsdir}/crystalsvg/*/*/metacontact_away.png
-%{_iconsdir}/crystalsvg/*/*/metacontact_offline.png
-%{_iconsdir}/crystalsvg/*/*/metacontact_online.png
-%{_iconsdir}/crystalsvg/*/*/metacontact_unknown.png
-%{_iconsdir}/crystalsvg/*/actions/contact_away_overlay.png
-%{_iconsdir}/crystalsvg/*/actions/contact_busy_overlay.png
-%{_iconsdir}/crystalsvg/*/actions/contact_food_overlay.png
-%{_iconsdir}/crystalsvg/*/actions/contact_invisible_overlay.png
-%{_iconsdir}/crystalsvg/*/actions/contact_phone_overlay.png
-%{_iconsdir}/crystalsvg/*/actions/contact_xa_overlay.png
-%{_iconsdir}/crystalsvg/*/apps/kopete_all_away.png
-%{_iconsdir}/crystalsvg/*/apps/kopete_offline.png
-%{_iconsdir}/crystalsvg/*/apps/kopete_some_away.png
-%{_iconsdir}/crystalsvg/*/apps/kopete_some_online.png
-%{_iconsdir}/crystalsvg/*/mimetypes/kopete_emoticons.png
+%{_iconsdir}/*/*/apps/kopete_all_away.png
+%{_iconsdir}/*/*/apps/kopete_offline.png
+%{_iconsdir}/*/*/apps/kopete_some_away.png
+%{_iconsdir}/*/*/apps/kopete_some_online.png
+%{_iconsdir}/*/*/mimetypes/kopete_emoticons.png
 
 %files devel
 %defattr(644,root,root,755)
@@ -914,7 +920,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde3/kcm_kopete_avdeviceconfig.la
 %attr(755,root,root) %{_libdir}/kde3/kcm_kopete_avdeviceconfig.so
 %{_datadir}/services/kopete_avdeviceconfig.desktop
-%{_datadir}/apps/kopete/icons/*/*/*/kopete_avdevice*.*
+%{_datadir}/apps/kopete/icons/*/*/*/kopete_avdevice.png
 
 %files tool-connectionstatus
 %defattr(644,root,root,755)
