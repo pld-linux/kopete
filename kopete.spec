@@ -915,7 +915,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kcm_kopete_avdeviceconfig.so
 %{_datadir}/services/kopete_avdeviceconfig.desktop
 %{_datadir}/apps/kopete/icons/*/*/*/kopete_avdevice*.*
-#%{_datadir}/services/kconfiguredialog/kopete_avdeviceconfig.desktop
 
 %files tool-connectionstatus
 %defattr(644,root,root,755)
@@ -988,14 +987,14 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with smpppd}
 %files tool-smpppdcs
 %defattr(644,root,root,755)
-%{_datadir}/config.kcfg/smpppdcs.kcfg
 %{_libdir}/kde3/kcm_kopete_smpppdcs.la
 %attr(755,root,root) %{_libdir}/kde3/kcm_kopete_smpppdcs.so
 %{_libdir}/kde3/kopete*smpppdcs*.la
 %attr(755,root,root) %{_libdir}/kde3/kopete*smpppdcs*.so
 %{_datadir}/apps/kopete/icons/crystalsvg/*/*/smpppdcs.png
-%{_datadir}/services/kopete_smpppdcs.desktop
+%{_datadir}/config.kcfg/smpppdcs.kcfg
 %{_datadir}/services/kconfiguredialog/kopete_smpppdcs_config.desktop
+%{_datadir}/services/kopete_smpppdcs.desktop
 %endif
 
 %files tool-texteffect
