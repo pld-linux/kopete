@@ -52,6 +52,7 @@ Requires:	qt >= 3.1
 Provides:	kdenetwork-kopete
 Obsoletes:	kdenetwork-kopete
 Obsoletes:	kdenetwork-kopete-protocol-testbed
+Obsoletes:	kopete-designer
 Obsoletes:	kopete-plugin-protocols-aim
 Obsoletes:	kopete-plugin-protocols-gg
 Obsoletes:	kopete-plugin-protocols-icq
