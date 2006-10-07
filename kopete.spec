@@ -1,4 +1,5 @@
 # TODO:
+# - fix tool-avdeviceconfig summary and description (copy-pasto!)
 # - subpackage linphone's oRTP libraries to add Jingle support for jabber
 #
 # Conditional build:
@@ -7,9 +8,9 @@
 %bcond_with	meanwhile	# Kopete Meanwhile plugin (Lotus Sametime support)
 %bcond_without	smpppd		# support for the SuSE Meta PPP Daemon (smpppd)
 %bcond_without	winpopup
-%bcond_without	smsgsm			# GSM SMS protocol
-%bcond_without	slp			# don't require libslp (Browsing in krfb and krdc not possible)
-%bcond_with		jingle		# enable Jabber Jingle voice support
+%bcond_without	smsgsm		# GSM SMS protocol
+%bcond_without	slp		# don't require libslp (Browsing in krfb and krdc not possible)
+%bcond_with	jingle		# enable Jabber Jingle voice support
 #
 Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
@@ -45,7 +46,7 @@ BuildRequires:	qt-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.129
 %{?with_xmms:BuildRequires:	xmms-devel >= 1.0.0}
 Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
-Requires:	kdebase-core >= 3.5.
+Requires:	kdebase-core >= 3.5.0
 Requires:	perl-modules
 Requires:	qt >= 3.1
 Provides:	kdenetwork-kopete
@@ -266,18 +267,18 @@ Narzêdzie Kopete umo¿liwiaj±ce importowanie kontaktów z innych
 komunikatorów.
 
 %package tool-latex
-Summary:	A latex plugin for Kopete
-Summary(pl):	Wtyczka Kopete renderuj±ca tekst w formacie latexu
+Summary:	A LaTeX plugin for Kopete
+Summary(pl):	Wtyczka Kopete renderuj±ca tekst w formacie LaTeXa
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-latex
 Obsoletes:	kdenetwork-kopete-tool-latex
 
 %description tool-latex
-A latex plugin for Kopete.
+A LaTeX plugin for Kopete.
 
 %description tool-latex -l pl
-Wtyczka Kopete renderuj±ca tekst w formacie latexu.
+Wtyczka Kopete renderuj±ca tekst w formacie LaTeXa.
 
 %package tool-motionaway
 Summary:	Kopete plugin which sets away status when not detecting movement near the computer
@@ -332,7 +333,7 @@ zaistnieniu których ma nast±piæ, s± konfigurowalne.
 
 %package tool-spellcheck
 Summary:	A spell checking plugin for Kopete
-Summary(pl):	Wtyczka Kopete sprawdzaj±ca pisownie
+Summary(pl):	Wtyczka Kopete sprawdzaj±ca pisowniê
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-spellcheck
@@ -342,7 +343,7 @@ Obsoletes:	kdenetwork-kopete-tool-spellcheck
 A spell checking plugin for Kopete.
 
 %description tool-spellcheck -l pl
-Wtyczka Kopete sprawdzaj±ca pisownie.
+Wtyczka Kopete sprawdzaj±ca pisowniê.
 
 %package tool-texteffect
 Summary:	Kopete plugin that adds nice effects to your messages
