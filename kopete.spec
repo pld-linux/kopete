@@ -16,7 +16,7 @@ Summary:	Multi-protocol plugin-based instant messenger
 Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
 Name:		kopete
 Version:	0.12.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -25,6 +25,7 @@ Source0:	http://dl.sourceforge.net/kopete/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-desktop.patch
 # http://www.kde-apps.org/content/show.php?content=40844
 Patch1:		%{name}-crypt.patch
+Patch2:		%{name}-icqconn.patch
 URL:		http://kopete.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -612,6 +613,7 @@ przez AIM i ICQ.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p0
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
@@ -721,7 +723,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/application/x-kopete-emoticons.desktop
 %{_datadir}/services/chatwindow.desktop
 %{_datadir}/services/emailwindow.desktop
-%{_datadir}/services/invitation.protocol
+#%{_datadir}/services/invitation.protocol
 %{_datadir}/services/kopete_accountconfig.desktop
 %{_datadir}/services/kopete_addbookmarks.desktop
 %{_datadir}/services/kopete_appearanceconfig.desktop
@@ -763,6 +765,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/actions/voicecall.png
 %{_iconsdir}/*/*/actions/webcamreceive.png
 %{_iconsdir}/*/*/actions/webcamsend.png
+%{_iconsdir}/*/*/actions/add_user.png
+%{_iconsdir}/*/*/actions/search_user.png
 %{_iconsdir}/*/*/apps/kopete.png
 %{_iconsdir}/*/*/apps/kopete2.svgz
 %{_iconsdir}/*/*/apps/kopete_all_away.png
