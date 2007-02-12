@@ -13,7 +13,7 @@
 %bcond_with	jingle		# enable Jabber Jingle voice support
 #
 Summary:	Multi-protocol plugin-based instant messenger
-Summary(pl):	Komunikator obs³uguj±cy wiele protoko³ów
+Summary(pl.UTF-8):   Komunikator obsÅ‚ugujÄ…cy wiele protokoÅ‚Ã³w
 Name:		kopete
 Version:	0.12.2
 Release:	2
@@ -92,21 +92,21 @@ to support a new protocol. The core Kopete development team provides a
 handful of plugins that most users can use, in addition to templates
 for new developers to base a plugin off of.
 
-%description -l pl
-Kopete to rozszerzalny i rozbudowywalny komunikator obs³uguj±cy wiele
-protoko³ów, zaprojektowany w oparciu o wtyczki. Wszystkie protoko³y s±
-wtyczkami, co pozwala na modularn± instalacjê, konfiguracjê i u¿ywanie
-bez potrzeby obs³ugi ³adowanych wtyczek w g³ównej aplikacji. Celem
-Kopete jest wyposa¿enie u¿ytkowników w standardowy i ³atwy w u¿yciu
-interfejs pomiêdzy wszystkimi systemami komunikatorów, a jednocze¶nie
-zapewnienie programistom ³atwo¶ci pisania wtyczek obs³uguj±cych nowe
-protoko³y. Za³oga programistów Kopete udostêpnia podrêczny zestaw
-wtyczek u¿ywanych przez wiêkszo¶æ u¿ytkowników oraz szablony dla
-nowych programistów, na których mo¿na opieraæ nowe wtyczki.
+%description -l pl.UTF-8
+Kopete to rozszerzalny i rozbudowywalny komunikator obsÅ‚ugujÄ…cy wiele
+protokoÅ‚Ã³w, zaprojektowany w oparciu o wtyczki. Wszystkie protokoÅ‚y sÄ…
+wtyczkami, co pozwala na modularnÄ… instalacjÄ™, konfiguracjÄ™ i uÅ¼ywanie
+bez potrzeby obsÅ‚ugi Å‚adowanych wtyczek w gÅ‚Ã³wnej aplikacji. Celem
+Kopete jest wyposaÅ¼enie uÅ¼ytkownikÃ³w w standardowy i Å‚atwy w uÅ¼yciu
+interfejs pomiÄ™dzy wszystkimi systemami komunikatorÃ³w, a jednoczeÅ›nie
+zapewnienie programistom Å‚atwoÅ›ci pisania wtyczek obsÅ‚ugujÄ…cych nowe
+protokoÅ‚y. ZaÅ‚oga programistÃ³w Kopete udostÄ™pnia podrÄ™czny zestaw
+wtyczek uÅ¼ywanych przez wiÄ™kszoÅ›Ä‡ uÅ¼ytkownikÃ³w oraz szablony dla
+nowych programistÃ³w, na ktÃ³rych moÅ¼na opieraÄ‡ nowe wtyczki.
 
 %package devel
 Summary:	kopete - header files
-Summary(pl):	kopete - pliki nag³ówkowe do kopete
+Summary(pl.UTF-8):   kopete - pliki nagÅ‚Ã³wkowe do kopete
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	%{name}-libkopete_msn = %{epoch}:%{version}-%{release}
@@ -116,13 +116,13 @@ Requires:	%{name}-libkopete_videodevice = %{epoch}:%{version}-%{release}
 %description devel
 This package contains header files for kopete.
 
-%description devel -l pl
-Pakiet ten zawiera pliki nag³ówkowe potrzebn± przy pisaniu w³asnych
-programów wykorzystuj±cych kopete.
+%description devel -l pl.UTF-8
+Pakiet ten zawiera pliki nagÅ‚Ã³wkowe potrzebnÄ… przy pisaniu wÅ‚asnych
+programÃ³w wykorzystujÄ…cych kopete.
 
 %package tool-alias
 Summary:	Kopete plugin to add custom aliases for commands
-Summary(pl):	Wtyczka Kopete do dodawania w³asnych aliasów dla poleceñ
+Summary(pl.UTF-8):   Wtyczka Kopete do dodawania wÅ‚asnych aliasÃ³w dla poleceÅ„
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-alias
@@ -131,12 +131,12 @@ Obsoletes:	kdenetwork-kopete-tool-alias
 %description tool-alias
 Kopete plugin to add custom aliases for commands.
 
-%description tool-alias -l pl
-Wtyczka Kopete do dodawania w³asnych aliasów dla poleceñ.
+%description tool-alias -l pl.UTF-8
+Wtyczka Kopete do dodawania wÅ‚asnych aliasÃ³w dla poleceÅ„.
 
 %package tool-autoaway
 Summary:	Kopete autoaway plugin
-Summary(pl):	Wtyczka Kopete do automatycznego przechodzenia w stan zajêty
+Summary(pl.UTF-8):   Wtyczka Kopete do automatycznego przechodzenia w stan zajÄ™ty
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-autoaway
@@ -146,13 +146,13 @@ Obsoletes:	kdenetwork-kopete-tool-autoaway
 Kopete plugin which automatically changes status to away. Conditions
 are configurable.
 
-%description tool-autoaway -l pl
-Wtyczka Kopete automatycznie zmieniaj±ca status na zajêty. Warunki, po
-zaistnieniu których ma nast±piæ, s± konfigurowalne.
+%description tool-autoaway -l pl.UTF-8
+Wtyczka Kopete automatycznie zmieniajÄ…ca status na zajÄ™ty. Warunki, po
+zaistnieniu ktÃ³rych ma nastÄ…piÄ‡, sÄ… konfigurowalne.
 
 %package tool-autoreplace
 Summary:	Kopete plugin which autoreplaces some text you can choose
-Summary(pl):	Wtyczka Kopete do automatycznej zamiany tekstu
+Summary(pl.UTF-8):   Wtyczka Kopete do automatycznej zamiany tekstu
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-autoreplace
@@ -161,12 +161,12 @@ Obsoletes:	kdenetwork-kopete-tool-autoreplace
 %description tool-autoreplace
 Kopete plugin which autoreplaces some text you can choose.
 
-%description tool-autoreplace -l pl
+%description tool-autoreplace -l pl.UTF-8
 Wtyczka Kopete do automatycznej zamiany tekstu.
 
 %package tool-avdeviceconfig
 Summary:	Kopete avdeviceconfig plugin
-Summary(pl):	Wtyczka Kopete do automatycznego przechodzenia w stan zajêty
+Summary(pl.UTF-8):   Wtyczka Kopete do automatycznego przechodzenia w stan zajÄ™ty
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-avdeviceconfig
@@ -176,13 +176,13 @@ Obsoletes:	kdenetwork-kopete-tool-avdeviceconfig
 Kopete plugin which automatically changes status to away. Conditions
 are configurable.
 
-%description tool-avdeviceconfig -l pl
-Wtyczka Kopete automatycznie zmieniaj±ca status na zajêty. Warunki, po
-zaistnieniu których ma nast±piæ, s± konfigurowalne.
+%description tool-avdeviceconfig -l pl.UTF-8
+Wtyczka Kopete automatycznie zmieniajÄ…ca status na zajÄ™ty. Warunki, po
+zaistnieniu ktÃ³rych ma nastÄ…piÄ‡, sÄ… konfigurowalne.
 
 %package tool-connectionstatus
 Summary:	Kopete Internet connection detector
-Summary(pl):	Wykrywacz po³±czeñ internetowych dla Kopete
+Summary(pl.UTF-8):   Wykrywacz poÅ‚Ä…czeÅ„ internetowych dla Kopete
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-conectionstatus
@@ -192,13 +192,13 @@ Obsoletes:	kdenetwork-kopete-tool-conectionstatus
 Kopete tool which automatically detects whether the internet
 connection is available or not.
 
-%description tool-connectionstatus -l pl
-Narzêdzie Kopete automatycznie sprawdzaj±ce, czy dostêpne jest
-po³±czenie do Internetu.
+%description tool-connectionstatus -l pl.UTF-8
+NarzÄ™dzie Kopete automatycznie sprawdzajÄ…ce, czy dostÄ™pne jest
+poÅ‚Ä…czenie do Internetu.
 
 %package tool-contactnotes
 Summary:	Kopete tool which adds personal notes to your contacts
-Summary(pl):	Narzêdzie Kopete do dodawania notatek do kontaktów
+Summary(pl.UTF-8):   NarzÄ™dzie Kopete do dodawania notatek do kontaktÃ³w
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-contactnotes
@@ -207,12 +207,12 @@ Obsoletes:	kdenetwork-kopete-tool-contactnotes
 %description tool-contactnotes
 Kopete tool which allows adding personal notes to your contacts.
 
-%description tool-contactnotes -l pl
-Narzêdzie Kopete umo¿liwiaj±ce dodawanie notatek do kontaktów.
+%description tool-contactnotes -l pl.UTF-8
+NarzÄ™dzie Kopete umoÅ¼liwiajÄ…ce dodawanie notatek do kontaktÃ³w.
 
 %package tool-cryptography
 Summary:	Kopete messages encryptor
-Summary(pl):	Program do szyfrowania wiadomo¶ci dla Kopete
+Summary(pl.UTF-8):   Program do szyfrowania wiadomoÅ›ci dla Kopete
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-cryptography
@@ -221,12 +221,12 @@ Obsoletes:	kdenetwork-kopete-tool-cryptography
 %description tool-cryptography
 OpenPGP messages encryptor for Kopete.
 
-%description tool-cryptography -l pl
-Program dla Kopete do szyfrowania wiadomo¶ci przy pomocy OpenPGP.
+%description tool-cryptography -l pl.UTF-8
+Program dla Kopete do szyfrowania wiadomoÅ›ci przy pomocy OpenPGP.
 
 %package tool-highlight
 Summary:	A highlighter plugin for Kopete
-Summary(pl):	Wtyczka Kopete podkre¶laj±ca wybrane teksty
+Summary(pl.UTF-8):   Wtyczka Kopete podkreÅ›lajÄ…ca wybrane teksty
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-highlight
@@ -235,12 +235,12 @@ Obsoletes:	kdenetwork-kopete-tool-highlight
 %description tool-highlight
 A highlighter plugin for Kopete.
 
-%description tool-highlight -l pl
-Wtyczka Kopete podkre¶laj±ca wybrane teksty.
+%description tool-highlight -l pl.UTF-8
+Wtyczka Kopete podkreÅ›lajÄ…ca wybrane teksty.
 
 %package tool-history
 Summary:	A history plugin for Kopete
-Summary(pl):	Wtyczka Kopete obs³uguj±ca historiê rozmów
+Summary(pl.UTF-8):   Wtyczka Kopete obsÅ‚ugujÄ…ca historiÄ™ rozmÃ³w
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-history
@@ -249,12 +249,12 @@ Obsoletes:	kdenetwork-kopete-tool-history
 %description tool-history
 A history plugin for Kopete.
 
-%description tool-history -l pl
-Wtyczka Kopete obs³uguj±ca historiê rozmów.
+%description tool-history -l pl.UTF-8
+Wtyczka Kopete obsÅ‚ugujÄ…ca historiÄ™ rozmÃ³w.
 
 %package tool-importer
 Summary:	Contact importer for Kopete
-Summary(pl):	Importer kontaktów dla Kopete
+Summary(pl.UTF-8):   Importer kontaktÃ³w dla Kopete
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-importer
@@ -264,13 +264,13 @@ Obsoletes:	kdenetwork-kopete-tool-importer
 Kopete tool which allows importing contacts from other instant
 messengers.
 
-%description tool-importer -l pl
-Narzêdzie Kopete umo¿liwiaj±ce importowanie kontaktów z innych
-komunikatorów.
+%description tool-importer -l pl.UTF-8
+NarzÄ™dzie Kopete umoÅ¼liwiajÄ…ce importowanie kontaktÃ³w z innych
+komunikatorÃ³w.
 
 %package tool-latex
 Summary:	A LaTeX plugin for Kopete
-Summary(pl):	Wtyczka Kopete renderuj±ca tekst w formacie LaTeXa
+Summary(pl.UTF-8):   Wtyczka Kopete renderujÄ…ca tekst w formacie LaTeXa
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-latex
@@ -279,12 +279,12 @@ Obsoletes:	kdenetwork-kopete-tool-latex
 %description tool-latex
 A LaTeX plugin for Kopete.
 
-%description tool-latex -l pl
-Wtyczka Kopete renderuj±ca tekst w formacie LaTeXa.
+%description tool-latex -l pl.UTF-8
+Wtyczka Kopete renderujÄ…ca tekst w formacie LaTeXa.
 
 %package tool-motionaway
 Summary:	Kopete plugin which sets away status when not detecting movement near the computer
-Summary(pl):	Wtyczka Kopete zmieniaj±ca status na zajêty je¶li nie wykrywa ruchu wokó³ komputera
+Summary(pl.UTF-8):   Wtyczka Kopete zmieniajÄ…ca status na zajÄ™ty jeÅ›li nie wykrywa ruchu wokÃ³Å‚ komputera
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-motionaway
@@ -294,13 +294,13 @@ Obsoletes:	kdenetwork-kopete-tool-motionaway
 This Kopete plugin sets away status when not detecting movement near
 the computer.
 
-%description tool-motionaway -l pl
-Ta wtyczka Kopete zmienia status na zajêty je¶li nie wykrywa ruchu
-wokó³ komputera.
+%description tool-motionaway -l pl.UTF-8
+Ta wtyczka Kopete zmienia status na zajÄ™ty jeÅ›li nie wykrywa ruchu
+wokÃ³Å‚ komputera.
 
 %package tool-nowlistening
 Summary:	Playlist informer for Kopete
-Summary(pl):	Informator o playli¶cie dla Kopete
+Summary(pl.UTF-8):   Informator o playliÅ›cie dla Kopete
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 %if %{with xmms}
@@ -313,13 +313,13 @@ Obsoletes:	kdenetwork-kopete-tool-nowlistening
 This Kopete plugin tells selected live chats what you're currently
 listening to in xmms/kscd/noatun.
 
-%description tool-nowlistening -l pl
-Ta wtyczka Kopete wypisuje podczas wybranych rozmów nazwê aktualnie
-s³uchanej piosenki w xmms/kscd/noatun.
+%description tool-nowlistening -l pl.UTF-8
+Ta wtyczka Kopete wypisuje podczas wybranych rozmÃ³w nazwÄ™ aktualnie
+sÅ‚uchanej piosenki w xmms/kscd/noatun.
 
 %package tool-smpppdcs
 Summary:	Kopete smpppdcs plugin
-Summary(pl):	Wtyczka Kopete do automatycznego przechodzenia w stan zajêty
+Summary(pl.UTF-8):   Wtyczka Kopete do automatycznego przechodzenia w stan zajÄ™ty
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-smpppdcs
@@ -329,13 +329,13 @@ Obsoletes:	kdenetwork-kopete-tool-smpppdcs
 Kopete plugin which automatically changes status to away. Conditions
 are configurable.
 
-%description tool-smpppdcs -l pl
-Wtyczka Kopete automatycznie zmieniaj±ca status na zajêty. Warunki, po
-zaistnieniu których ma nast±piæ, s± konfigurowalne.
+%description tool-smpppdcs -l pl.UTF-8
+Wtyczka Kopete automatycznie zmieniajÄ…ca status na zajÄ™ty. Warunki, po
+zaistnieniu ktÃ³rych ma nastÄ…piÄ‡, sÄ… konfigurowalne.
 
 %package tool-spellcheck
 Summary:	A spell checking plugin for Kopete
-Summary(pl):	Wtyczka Kopete sprawdzaj±ca pisowniê
+Summary(pl.UTF-8):   Wtyczka Kopete sprawdzajÄ…ca pisowniÄ™
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-spellcheck
@@ -344,12 +344,12 @@ Obsoletes:	kdenetwork-kopete-tool-spellcheck
 %description tool-spellcheck
 A spell checking plugin for Kopete.
 
-%description tool-spellcheck -l pl
-Wtyczka Kopete sprawdzaj±ca pisowniê.
+%description tool-spellcheck -l pl.UTF-8
+Wtyczka Kopete sprawdzajÄ…ca pisowniÄ™.
 
 %package tool-texteffect
 Summary:	Kopete plugin that adds nice effects to your messages
-Summary(pl):	Wtyczka Kopete dodaj±ca ³adne efekty do wiadomo¶ci
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca Å‚adne efekty do wiadomoÅ›ci
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-texteffect
@@ -358,12 +358,12 @@ Obsoletes:	kdenetwork-kopete-tool-texteffect
 %description tool-texteffect
 Kopete plugin that adds nice effects to your messages.
 
-%description tool-texteffect -l pl
-Wtyczka Kopete dodaj±ca ³adne efekty do wiadomo¶ci.
+%description tool-texteffect -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca Å‚adne efekty do wiadomoÅ›ci.
 
 %package tool-translator
 Summary:	Kopete plugin which uses babelfish to translate messages
-Summary(pl):	Wtyczka Kopete wykorzystuj±ca babelfish do t³umaczenia wiadomo¶ci
+Summary(pl.UTF-8):   Wtyczka Kopete wykorzystujÄ…ca babelfish do tÅ‚umaczenia wiadomoÅ›ci
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-tool-translator
@@ -373,12 +373,12 @@ Obsoletes:	kdenetwork-kopete-tool-translator
 This Kopete plugin uses web translating engines (like Altavista's
 babelfish or Google) to translate messages.
 
-%description tool-translator -l pl
-Ta wtyczka Kopete wykorzystuje babelfish do t³umaczenia wiadomo¶ci.
+%description tool-translator -l pl.UTF-8
+Ta wtyczka Kopete wykorzystuje babelfish do tÅ‚umaczenia wiadomoÅ›ci.
 
 %package tool-webpresence
 Summary:	Web contactlist presenter for Kopete
-Summary(pl):	Wy¶wietlacz listy kontaktów na WWW dla Kopete
+Summary(pl.UTF-8):   WyÅ›wietlacz listy kontaktÃ³w na WWW dla Kopete
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	libxml2 >= 2.4.8
@@ -389,13 +389,13 @@ Obsoletes:	kopete-tool-webpresence
 %description tool-webpresence
 This Kopete plugin shows the status of your IM accounts on a webpage.
 
-%description tool-webpresence -l pl
-Ta wtyczka Kopete pokazuje status (ca³ej lub czê¶ci) listy kontaktów
+%description tool-webpresence -l pl.UTF-8
+Ta wtyczka Kopete pokazuje status (caÅ‚ej lub czÄ™Å›ci) listy kontaktÃ³w
 na stronie WWW.
 
 %package protocol-aim
 Summary:	Kopete plugin which adds AIM protocol support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê protoko³u AIM
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u AIM
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	%{name}-libkopete_oscar = %{epoch}:%{version}-%{release}
@@ -405,12 +405,12 @@ Obsoletes:	kdenetwork-kopete-protocol-aim
 %description protocol-aim
 Kopete plugin which adds AIM protocol support.
 
-%description protocol-aim -l pl
-Wtyczka Kopete dodaj±ca obs³ugê protoko³u AIM.
+%description protocol-aim -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u AIM.
 
 %package protocol-gg
 Summary:	Kopete plugin which adds GaduGadu protocol support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê protoko³u GaduGadu
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u GaduGadu
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-protocol-gg
@@ -419,12 +419,12 @@ Obsoletes:	kdenetwork-kopete-protocol-gg
 %description protocol-gg
 Kopete plugin which adds GaduGadu protocol support.
 
-%description protocol-gg -l pl
-Wtyczka Kopete dodaj±ca obs³ugê protoko³u GaduGadu.
+%description protocol-gg -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u GaduGadu.
 
 %package protocol-groupwise
 Summary:	Kopete plugin which adds Groupwise protocol support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê protoko³u Groupwise
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u Groupwise
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-protocol-groupwise
@@ -433,12 +433,12 @@ Obsoletes:	kdenetwork-kopete-protocol-groupwise
 %description protocol-groupwise
 Kopete plugin which adds Groupwise protocol support.
 
-%description protocol-groupwise -l pl
-Wtyczka Kopete dodaj±ca obs³ugê protoko³u Groupwise.
+%description protocol-groupwise -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u Groupwise.
 
 %package protocol-icq
 Summary:	Kopete plugin which adds ICQ protocol support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê protoko³u ICQ
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u ICQ
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	%{name}-libkopete_oscar = %{epoch}:%{version}-%{release}
@@ -448,12 +448,12 @@ Obsoletes:	kdenetwork-kopete-protocol-icq
 %description protocol-icq
 Kopete plugin which adds ICQ protocol support.
 
-%description protocol-icq -l pl
-Wtyczka Kopete dodaj±ca obs³ugê protoko³u ICQ.
+%description protocol-icq -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u ICQ.
 
 %package protocol-irc
 Summary:	Kopete plugin which adds IRC support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê IRC-a
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ IRC-a
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-protocol-irc
@@ -462,12 +462,12 @@ Obsoletes:	kdenetwork-kopete-protocol-irc
 %description protocol-irc
 Kopete plugin which adds IRC support.
 
-%description protocol-irc -l pl
-Wtyczka Kopete dodaj±ca obs³ugê IRC-a.
+%description protocol-irc -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ IRC-a.
 
 %package protocol-jabber
 Summary:	Kopete plugin which adds Jabber protocol support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê protoko³u Jabber
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u Jabber
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-protocol-jabber
@@ -476,12 +476,12 @@ Obsoletes:	kdenetwork-kopete-protocol-jabber
 %description protocol-jabber
 Kopete plugin which adds Jabber protocol support.
 
-%description protocol-jabber -l pl
-Wtyczka Kopete dodaj±ca obs³ugê protoko³u Jabber.
+%description protocol-jabber -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u Jabber.
 
 %package protocol-msn
 Summary:	Kopete plugin which adds MSN protocol support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê protoko³u MSN
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u MSN
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	%{name}-libkopete_msn = %{epoch}:%{version}-%{release}
@@ -491,12 +491,12 @@ Obsoletes:	kdenetwork-kopete-protocol-msn
 %description protocol-msn
 Kopete plugin which adds MSN protocol support.
 
-%description protocol-msn -l pl
-Wtyczka Kopete dodaj±ca obs³ugê protoko³u MSN.
+%description protocol-msn -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u MSN.
 
 %package protocol-meanwhile
 Summary:	Kopete plugin which adds Lotus Sametime protocol support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê protoko³u Lotus Sametime
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u Lotus Sametime
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-protocol-meanwhile
@@ -505,12 +505,12 @@ Obsoletes:	kdenetwork-kopete-protocol-meanwhile
 %description protocol-meanwhile
 Kopete plugin which adds meanwhile Lotus Sametime support.
 
-%description protocol-meanwhile -l pl
-Wtyczka Kopete dodaj±ca obs³ugê protoko³u Lotus Sametime.
+%description protocol-meanwhile -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u Lotus Sametime.
 
 %package protocol-sms
 Summary:	Kopete plugin which adds SMS contact support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê kontaktów SMS
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ kontaktÃ³w SMS
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-protocol-sms
@@ -519,12 +519,12 @@ Obsoletes:	kdenetwork-kopete-protocol-sms
 %description protocol-sms
 Kopete plugin which adds SMS contact support.
 
-%description protocol-sms -l pl
-Wtyczka Kopete dodaj±ca obs³ugê kontaktów SMS.
+%description protocol-sms -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ kontaktÃ³w SMS.
 
 %package protocol-winpopup
 Summary:	Kopete plugin which adds WinPopUp messaging support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê komunikacji przez WinPopUp
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ komunikacji przez WinPopUp
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-protocol-winpopup
@@ -533,12 +533,12 @@ Obsoletes:	kdenetwork-kopete-protocol-winpopup
 %description protocol-winpopup
 Kopete plugin which adds WinPopUp messaging support.
 
-%description protocol-winpopup -l pl
-Wtyczka Kopete dodaj±ca obs³ugê komunikacji przez WinPopUp.
+%description protocol-winpopup -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ komunikacji przez WinPopUp.
 
 %package protocol-yahoo
 Summary:	Kopete plugin which adds Yahoo protocol support
-Summary(pl):	Wtyczka Kopete dodaj±ca obs³ugê protoko³u Yahoo
+Summary(pl.UTF-8):   Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u Yahoo
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-kopete-protocol-yahoo
@@ -547,13 +547,13 @@ Obsoletes:	kdenetwork-kopete-protocol-yahoo
 %description protocol-yahoo
 Kopete plugin which adds Yahoo protocol support.
 
-%description protocol-yahoo -l pl
-Wtyczka Kopete dodaj±ca obs³ugê protoko³u Yahoo.
+%description protocol-yahoo -l pl.UTF-8
+Wtyczka Kopete dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u Yahoo.
 
 # libraries
 %package libkopete
 Summary:	kopete library
-Summary(pl):	Biblioteka kopete
+Summary(pl.UTF-8):   Biblioteka kopete
 Group:		X11/Libraries
 Requires:	kdelibs >= %{_minlibsevr}
 Provides:	kdenetwork-libkopete
@@ -562,12 +562,12 @@ Obsoletes:	kdenetwork-libkopete
 %description libkopete
 kopete library.
 
-%description libkopete -l pl
+%description libkopete -l pl.UTF-8
 Biblioteka kopete.
 
 %package libkopete_msn
 Summary:	MSN protocol shared library
-Summary(pl):	Biblioteka wspó³dzielona dla protoko³u MSN
+Summary(pl.UTF-8):   Biblioteka wspÃ³Å‚dzielona dla protokoÅ‚u MSN
 Group:		X11/Libraries
 Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-libkopete_msn
@@ -576,12 +576,12 @@ Obsoletes:	kdenetwork-libkopete_msn
 %description libkopete_msn
 MSN protocol shared library.
 
-%description libkopete_msn -l pl
-Biblioteka wspó³dzielona dla protoko³u MSN.
+%description libkopete_msn -l pl.UTF-8
+Biblioteka wspÃ³Å‚dzielona dla protokoÅ‚u MSN.
 
 %package libkopete_videodevice
 Summary:	Video input device support library for kopete
-Summary(pl):	Biblioteka z obs³ug± urz±dzeñ wej¶cia video dla kopete
+Summary(pl.UTF-8):   Biblioteka z obsÅ‚ugÄ… urzÄ…dzeÅ„ wejÅ›cia video dla kopete
 Group:		X11/Libraries
 Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-libkopete_videodevice
@@ -590,12 +590,12 @@ Obsoletes:	kdenetwork-libkopete_videodevice
 %description libkopete_videodevice
 Video input device support library for kopete.
 
-%description libkopete_videodevice -l pl
-Biblioteka z obs³ug± urz±dzeñ wej¶cia video dla kopete.
+%description libkopete_videodevice -l pl.UTF-8
+Biblioteka z obsÅ‚ugÄ… urzÄ…dzeÅ„ wejÅ›cia video dla kopete.
 
 %package libkopete_oscar
 Summary:	Shared library which adds OSCAR protocol support
-Summary(pl):	Biblioteka dodaj±ca obs³ugê protoko³u OSCAR
+Summary(pl.UTF-8):   Biblioteka dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u OSCAR
 Group:		X11/Applications/Networking
 Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
 Provides:	kdenetwork-libkopete_oscar
@@ -605,8 +605,8 @@ Obsoletes:	kdenetwork-libkopete_oscar
 A shared library which adds OSCAR protocol support needed eg. by AIM
 and ICQ.
 
-%description libkopete_oscar -l pl
-Biblioteka dodaj±ca obs³ugê protoko³u OSCAR, u¿ywanego miêdzy innymi
+%description libkopete_oscar -l pl.UTF-8
+Biblioteka dodajÄ…ca obsÅ‚ugÄ™ protokoÅ‚u OSCAR, uÅ¼ywanego miÄ™dzy innymi
 przez AIM i ICQ.
 
 %prep
