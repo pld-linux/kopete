@@ -303,9 +303,6 @@ Summary:	Playlist informer for Kopete
 Summary(pl.UTF-8):	Informator o playliście dla Kopete
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-%if %{with xmms}
-Requires:	xmms >= 1.0.0
-%endif
 Provides:	kdenetwork-kopete-tool-nowlistening
 Obsoletes:	kdenetwork-kopete-tool-nowlistening
 
