@@ -43,7 +43,7 @@ BuildRequires:	libxslt-devel >= 1.0.7
 %{?with_meanwhile:BuildRequires:	meanwhile-devel >= 1.0.1}
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
-BuildRequires:	qt-devel >= 3.1
+BuildRequires:	qt-devel >= 6:3.1
 BuildRequires:	rpmbuild(macros) >= 1.129
 %{?with_xmms:BuildRequires:	xmms-devel >= 1.0.0}
 Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
