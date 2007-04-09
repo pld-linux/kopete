@@ -32,9 +32,10 @@ BuildRequires:	automake
 BuildRequires:	fam-devel
 BuildRequires:	glib-devel
 %{?with_smsgsm:BuildRequires:	gsmlib-devel}
-BuildRequires:	kdemultimedia-devel >= 3.1
-BuildRequires:	kdemultimedia-kscd >= 3.1
-%{?with_noatun:BuildRequires:	kdemultimedia-noatun >= 3.1}
+BuildRequires:	kdelibs-devel >= 9:3.5.0
+BuildRequires:	kdemultimedia-devel >= 9:3.5.0
+BuildRequires:	kdemultimedia-kscd >= 9:3.5.0
+%{?with_noatun:BuildRequires:	kdemultimedia-noatun >= 9:3.5.0}
 BuildRequires:	libgadu-devel >= 1.0
 #BuildRequires:	libpsi-devel >= 20021108
 BuildRequires:	libxml2-devel >= 2.4.8
@@ -43,13 +44,13 @@ BuildRequires:	libxslt-devel >= 1.0.7
 %{?with_meanwhile:BuildRequires:	meanwhile-devel >= 1.0.1}
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
-BuildRequires:	qt-devel >= 6:3.1
+BuildRequires:	qt-devel >= 6:3.3
 BuildRequires:	rpmbuild(macros) >= 1.129
 %{?with_xmms:BuildRequires:	xmms-devel >= 1.0.0}
 Requires:	%{name}-libkopete = %{epoch}:%{version}-%{release}
-Requires:	kdebase-core >= 3.5.0
+Requires:	kdebase-core >= 6:3.5.0
 Requires:	perl-modules
-Requires:	qt >= 3.1
+Requires:	qt >= 6:3.3
 Provides:	kdenetwork-kopete
 Obsoletes:	kdenetwork-kopete
 Obsoletes:	kdenetwork-kopete-protocol-testbed
