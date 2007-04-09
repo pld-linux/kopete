@@ -618,6 +618,9 @@ kde_appsdir="%{_desktopdir}"; export kde_appsdir
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 %{__make} -f admin/Makefile.common cvs
 %configure \
+%if "%{_lib}" == "lib64"
+	--enable-libsuffix=64 \
+%endif
 	--%{?debug:en}%{!?debug:dis}able-debug \
 	--with-distribution="PLD Linux Distribution" \
 	--with-qt-libraries=%{_libdir} \
